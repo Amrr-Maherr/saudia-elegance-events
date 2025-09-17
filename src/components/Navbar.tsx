@@ -74,18 +74,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={toggleDarkMode}
-              className="text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
-            >
-              {darkMode ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
             >
