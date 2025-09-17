@@ -93,7 +93,7 @@ const Home = () => {
                 asChild
                 variant="minimal"
                 size="xl"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10"
               >
                 <Link to="/gallery">
                   اطلع على أعمالنا
