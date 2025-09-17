@@ -58,6 +58,10 @@ export default {
           DEFAULT: "hsl(var(--elegant))",
           foreground: "hsl(var(--elegant-foreground))",
         },
+        calm: {
+          DEFAULT: "hsl(var(--calm))",
+          foreground: "hsl(var(--calm-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -2,115 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Arabic Event Planning Design System - Elegant & Luxurious
-All colors MUST be HSL. Arabic RTL optimized.
+/* Premium Arabic Event Planning - Luxurious & Calm Design System
+Exact color specifications: White #FFFFFF, Beige #F5F5DC, Gold #D4AF37, Dark Green #013220, Black #000000
+All colors converted to HSL for consistency.
 */
 
 @layer base {
   :root {
-    /* Base colors - Light theme */
-    --background: 45 30% 98%;           /* Warm off-white */
-    --foreground: 160 90% 8%;           /* Deep dark green */
+    /* Exact color specifications converted to HSL */
+    --pure-white: 0 0% 100%;            /* #FFFFFF */
+    --luxury-beige: 60 56% 91%;         /* #F5F5DC */
+    --premium-gold: 43 77% 52%;         /* #D4AF37 */
+    --deep-green: 162 100% 10%;         /* #013220 */
+    --pure-black: 0 0% 0%;              /* #000000 */
 
-    --card: 0 0% 100%;                  /* Pure white */
-    --card-foreground: 160 90% 8%;
+    /* Base theme colors using exact specifications */
+    --background: 0 0% 100%;            /* Pure white background */
+    --foreground: 162 100% 10%;         /* Deep green text */
+
+    --card: 0 0% 100%;                  /* Pure white cards */
+    --card-foreground: 162 100% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 160 90% 8%;
+    --popover-foreground: 162 100% 10%;
 
-    /* Primary - Dark green (elegant, professional) */
-    --primary: 160 90% 12%;
+    /* Primary - Deep green for professional feel */
+    --primary: 162 100% 10%;            /* #013220 */
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Warm beige */
-    --secondary: 40 20% 92%;
-    --secondary-foreground: 160 90% 8%;
+    /* Secondary - Luxury beige */
+    --secondary: 60 56% 91%;            /* #F5F5DC */
+    --secondary-foreground: 162 100% 10%;
 
-    /* Gold accent - Luxury touch */
-    --accent: 45 90% 50%;               /* Rich gold */
+    /* Gold accent - Premium gold */
+    --accent: 43 77% 52%;               /* #D4AF37 */
     --accent-foreground: 0 0% 100%;
 
-    /* Muted tones */
-    --muted: 40 15% 95%;
-    --muted-foreground: 160 20% 35%;
+    /* Muted tones - Softer beige variations */
+    --muted: 60 30% 96%;
+    --muted-foreground: 162 50% 25%;
 
-    /* Luxury gold variant */
-    --luxury: 45 90% 50%;
+    /* Custom luxury variants */
+    --luxury: 43 77% 52%;               /* Premium gold */
     --luxury-foreground: 0 0% 100%;
 
-    /* Elegant beige */
-    --elegant: 40 25% 88%;
-    --elegant-foreground: 160 90% 8%;
+    --elegant: 60 56% 91%;              /* Luxury beige */
+    --elegant-foreground: 162 100% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --calm: 60 20% 98%;                 /* Very light beige for calm areas */
+    --calm-foreground: 162 80% 15%;
+
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 95%;
-    --ring: 45 90% 50%;
+    --border: 60 20% 85%;
+    --input: 60 30% 96%;
+    --ring: 43 77% 52%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom gradient variables */
-    --gradient-hero: linear-gradient(135deg, hsl(160 90% 12%), hsl(160 70% 18%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 90% 50%), hsl(45 85% 45%));
-    --gradient-elegant: linear-gradient(180deg, hsl(40 25% 98%), hsl(40 20% 92%));
+    /* Luxurious gradients using exact colors */
+    --gradient-hero: linear-gradient(135deg, hsl(162 100% 10%), hsl(162 80% 15%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 77% 52%), hsl(43 70% 48%));
+    --gradient-elegant: linear-gradient(180deg, hsl(0 0% 100%), hsl(60 56% 91%));
+    --gradient-calm: linear-gradient(180deg, hsl(60 20% 98%), hsl(60 30% 95%));
     
-    /* Shadows */
-    --shadow-elegant: 0 4px 20px -4px hsl(160 90% 12% / 0.1);
-    --shadow-gold: 0 8px 32px -8px hsl(45 90% 50% / 0.2);
+    /* Sophisticated shadows */
+    --shadow-elegant: 0 8px 40px -12px hsl(162 100% 10% / 0.08);
+    --shadow-gold: 0 12px 48px -12px hsl(43 77% 52% / 0.15);
+    --shadow-luxury: 0 20px 64px -16px hsl(162 100% 10% / 0.06);
+    --shadow-subtle: 0 2px 16px -4px hsl(162 100% 10% / 0.04);
   }
 
   .dark {
-    /* Base colors - Dark theme */
-    --background: 160 80% 4%;           /* Very dark green */
-    --foreground: 40 25% 95%;           /* Warm white */
+    /* Dark theme using sophisticated dark variations */
+    --background: 162 100% 3%;          /* Very dark green background */
+    --foreground: 60 30% 95%;           /* Warm light text */
 
-    --card: 160 60% 6%;
-    --card-foreground: 40 25% 95%;
+    --card: 162 80% 4%;
+    --card-foreground: 60 30% 95%;
 
-    --popover: 160 60% 6%;
-    --popover-foreground: 40 25% 95%;
+    --popover: 162 80% 4%;
+    --popover-foreground: 60 30% 95%;
 
-    /* Primary - Light for dark theme */
-    --primary: 45 90% 55%;              /* Brighter gold for dark */
-    --primary-foreground: 160 80% 4%;
+    /* Primary - Enhanced gold for dark theme */
+    --primary: 43 77% 60%;              /* Brighter gold */
+    --primary-foreground: 162 100% 3%;
 
-    /* Secondary - Dark beige */
-    --secondary: 160 40% 12%;
-    --secondary-foreground: 40 25% 95%;
+    /* Secondary - Dark beige tone */
+    --secondary: 162 40% 8%;
+    --secondary-foreground: 60 30% 95%;
 
-    /* Gold accent - Adjusted for dark */
-    --accent: 45 85% 60%;
-    --accent-foreground: 160 80% 4%;
+    /* Accent - Bright gold for contrast */
+    --accent: 43 77% 65%;
+    --accent-foreground: 162 100% 3%;
 
-    /* Muted tones for dark */
-    --muted: 160 40% 12%;
-    --muted-foreground: 40 15% 70%;
+    --muted: 162 30% 10%;
+    --muted-foreground: 60 20% 70%;
 
-    /* Luxury gold variant for dark */
-    --luxury: 45 85% 60%;
-    --luxury-foreground: 160 80% 4%;
+    --luxury: 43 77% 65%;
+    --luxury-foreground: 162 100% 3%;
 
-    /* Elegant beige for dark */
-    --elegant: 160 30% 15%;
-    --elegant-foreground: 40 25% 95%;
+    --elegant: 162 30% 12%;
+    --elegant-foreground: 60 30% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 25% 95%;
+    --calm: 162 40% 6%;
+    --calm-foreground: 60 25% 90%;
 
-    --border: 160 40% 15%;
-    --input: 160 40% 12%;
-    --ring: 45 85% 60%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 60 30% 95%;
 
-    /* Custom gradient variables for dark */
-    --gradient-hero: linear-gradient(135deg, hsl(160 80% 4%), hsl(160 60% 8%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 85% 60%), hsl(45 80% 55%));
-    --gradient-elegant: linear-gradient(180deg, hsl(160 60% 6%), hsl(160 40% 12%));
+    --border: 162 30% 15%;
+    --input: 162 30% 10%;
+    --ring: 43 77% 65%;
+
+    /* Dark theme gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(162 100% 3%), hsl(162 80% 6%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 77% 65%), hsl(43 70% 60%));
+    --gradient-elegant: linear-gradient(180deg, hsl(162 80% 4%), hsl(162 30% 12%));
+    --gradient-calm: linear-gradient(180deg, hsl(162 40% 6%), hsl(162 30% 10%));
     
-    /* Shadows for dark */
-    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-gold: 0 8px 32px -8px hsl(45 85% 60% / 0.2);
+    /* Dark theme shadows */
+    --shadow-elegant: 0 8px 40px -12px hsl(0 0% 0% / 0.2);
+    --shadow-gold: 0 12px 48px -12px hsl(43 77% 65% / 0.15);
+    --shadow-luxury: 0 20px 64px -16px hsl(0 0% 0% / 0.15);
+    --shadow-subtle: 0 2px 16px -4px hsl(0 0% 0% / 0.1);
   }
 }
 
@@ -120,29 +136,74 @@ All colors MUST be HSL. Arabic RTL optimized.
   }
 
   html {
-    font-family: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     direction: rtl;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-normal;
-    line-height: 1.7;
+    @apply bg-background text-foreground;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Arabic typography enhancements */
+  /* Refined Arabic typography */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: hsl(var(--foreground));
   }
 
-  /* Smooth animations */
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  /* Elegant text styles */
+  .text-luxury {
+    background: var(--gradient-gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -200% 0; }
+  }
+
+  /* Smooth, luxurious animations */
   * {
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  button, a {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Enhanced focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
 
 @layer components {
-  /* Hero gradient backgrounds */
+  /* Luxurious gradient backgrounds using exact color specifications */
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
@@ -154,8 +215,12 @@ All colors MUST be HSL. Arabic RTL optimized.
   .bg-gradient-elegant {
     background: var(--gradient-elegant);
   }
+  
+  .bg-gradient-calm {
+    background: var(--gradient-calm);
+  }
 
-  /* Custom shadows */
+  /* Sophisticated shadow system */
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
@@ -164,8 +229,55 @@ All colors MUST be HSL. Arabic RTL optimized.
     box-shadow: var(--shadow-gold);
   }
 
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  /* Luxury interaction effects */
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-gold);
+    transform: scale(1.02);
+  }
+
+  /* Elegant dividers */
+  .divider-gold {
+    height: 1px;
+    background: var(--gradient-gold);
+    margin: 2rem 0;
+  }
+
+  /* Calm, spacious layouts */
+  .section-spacing {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
   /* Arabic text utilities */
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-elegant {
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+  }
+
+  /* Luxurious backdrop blur */
+  .backdrop-luxury {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: hsl(var(--background) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
   }
 }

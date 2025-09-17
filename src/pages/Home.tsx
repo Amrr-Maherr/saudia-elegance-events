@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Crown, Users, Sparkles, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Crown, Users, Sparkles, CheckCircle, Star, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -9,111 +9,153 @@ const Home = () => {
     {
       icon: Crown,
       title: 'حفلات الزفاف',
-      description: 'تنظيم حفلات زفاف راقية ومميزة تترك ذكريات لا تُنسى'
+      description: 'تنظيم حفلات زفاف راقية ومميزة تترك ذكريات لا تُنسى مع الاهتمام بأدق التفاصيل'
     },
     {
       icon: Users,
       title: 'مراسم العزاء',
-      description: 'تنظيم مراسم العزاء بكل احترام ومهنية وفقاً للتقاليد'
+      description: 'تنظيم مراسم العزاء بكل احترام ومهنية وفقاً للتقاليد السعودية الأصيلة'
     },
     {
       icon: Sparkles,
       title: 'خدمات متكاملة',
-      description: 'من التخطيط إلى التنفيذ، نوفر كل ما تحتاجونه'
+      description: 'من التخطيط إلى التنفيذ، نوفر كل ما تحتاجونه لإنجاح فعاليتكم بأعلى المعايير'
     }
   ];
 
   const features = [
-    'خبرة أكثر من 10 سنوات',
-    'فريق محترف ومتخصص',
-    'خدمات متكاملة وشاملة',
-    'أسعار تنافسية ومناسبة'
+    { text: 'خبرة أكثر من 10 سنوات في المملكة', icon: Award },
+    { text: 'فريق محترف ومتخصص', icon: Users },
+    { text: 'خدمات متكاملة وشاملة', icon: Sparkles },
+    { text: 'أسعار تنافسية ومناسبة', icon: Star }
+  ];
+
+  const stats = [
+    { number: '+500', label: 'فعالية ناجحة تم تنظيمها', delay: 0 },
+    { number: '+300', label: 'حفل زفاف مميز', delay: 0.1 },
+    { number: '+200', label: 'مراسم عزاء محترمة', delay: 0.2 },
+    { number: '100%', label: 'رضا وثقة العملاء', delay: 0.3 }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/10" />
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center section-spacing">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 text-balance">
+            <motion.h1 
+              className="font-bold text-primary-foreground mb-8 text-balance"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               تنظيم الأفراح والعزاء
-              <span className="block bg-gradient-gold bg-clip-text text-transparent">
-                بمهنية وأناقة
+              <span className="block text-luxury mt-4">
+                بمهنية وأناقة استثنائية
               </span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              نحن نساعدكم في تنظيم فعالياتكم المهمة بأعلى مستوى من الاحترافية والتميز في المملكة العربية السعودية
-            </p>
+            <motion.p 
+              className="text-xl sm:text-2xl text-primary-foreground/90 mb-12 max-w-4xl mx-auto leading-relaxed text-elegant"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              نحن نساعدكم في تنظيم فعالياتكم المهمة بأعلى مستوى من الاحترافية والتميز في المملكة العربية السعودية، 
+              مع الحفاظ على التقاليد الأصيلة واللمسة العصرية الراقية
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <Button 
                 asChild
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-gold px-8 py-3 text-lg"
+                variant="gold"
+                size="xl"
+                className="hover-glow"
               >
                 <Link to="/contact">
                   تواصل معنا الآن
-                  <ArrowLeft className="mr-2 h-5 w-5" />
+                  <ArrowLeft className="mr-3 h-6 w-6" />
                 </Link>
               </Button>
               
               <Button 
                 asChild
-                variant="outline"
-                size="lg"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-3 text-lg"
+                variant="minimal"
+                size="xl"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
               >
                 <Link to="/gallery">
                   اطلع على أعمالنا
                 </Link>
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Floating decoration */}
+        <motion.div
+          className="absolute top-20 right-20 w-32 h-32 rounded-full bg-luxury/10 blur-3xl"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-elegant">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing bg-gradient-calm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-bold text-foreground mb-6">
               خدماتنا المميزة
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              نقدم مجموعة شاملة من الخدمات لضمان نجاح فعالياتكم
+            <div className="divider-gold max-w-24 mx-auto mb-6" />
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-elegant">
+              نقدم مجموعة شاملة من الخدمات المتخصصة لضمان نجاح فعالياتكم وتحقيق تطلعاتكم بأعلى معايير الجودة والأناقة
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -5 }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="group"
               >
-                <Card className="h-full bg-card shadow-elegant hover:shadow-gold transition-all duration-300">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                      <service.icon className="h-8 w-8 text-luxury-foreground" />
+                <Card className="h-full bg-card shadow-subtle hover-lift border-border/50">
+                  <CardContent className="p-10 text-center">
+                    <div className="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="h-10 w-10 text-luxury-foreground" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                    <h3 className="text-2xl font-semibold text-foreground mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-elegant">
                       {service.description}
                     </p>
                   </CardContent>
@@ -124,57 +166,92 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="section-spacing bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: stat.delay, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="bg-gradient-elegant rounded-2xl p-8 hover-lift">
+                  <div className="text-4xl lg:text-5xl font-bold text-accent mb-4">
+                    {stat.number}
+                  </div>
+                  <div className="text-muted-foreground font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Preview Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="section-spacing bg-gradient-calm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-bold text-foreground mb-8">
                 لماذا تختارونا؟
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات. فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير الجودة والأناقة.
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed text-elegant">
+                نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات منذ أكثر من عقد من الزمان. 
+                فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير الجودة والأناقة، مع الحفاظ على التقاليد السعودية الأصيلة.
               </p>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-6 mb-10">
                 {features.map((feature, index) => (
                   <motion.div
-                    key={feature}
-                    initial={{ opacity: 0, x: -20 }}
+                    key={feature.text}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center space-x-3 space-x-reverse"
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex items-center space-x-4 space-x-reverse group"
                   >
-                    <CheckCircle className="h-6 w-6 text-accent flex-shrink-0" />
-                    <span className="text-foreground font-medium">{feature}</span>
+                    <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="h-6 w-6 text-luxury-foreground" />
+                    </div>
+                    <span className="text-foreground font-medium text-lg">{feature.text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button asChild variant="elegant" size="lg" className="hover-glow">
                 <Link to="/about">
                   اعرف المزيد عنا
-                  <ArrowLeft className="mr-2 h-5 w-5" />
+                  <ArrowLeft className="mr-3 h-5 w-5" />
                 </Link>
               </Button>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-gold rounded-2xl p-8 shadow-gold">
-                <div className="bg-card rounded-xl p-8 text-center">
-                  <Crown className="h-16 w-16 text-accent mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    +500
+              <div className="bg-gradient-gold rounded-3xl p-2 shadow-luxury">
+                <div className="bg-card rounded-2xl p-12 text-center">
+                  <Crown className="h-24 w-24 text-accent mx-auto mb-8" />
+                  <h3 className="text-4xl font-bold text-foreground mb-4">
+                    التميز والإتقان
                   </h3>
-                  <p className="text-muted-foreground">
-                    فعالية ناجحة تم تنظيمها
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    نسعى لتحقيق أحلامكم وجعل فعالياتكم استثنائية لا تُنسى
                   </p>
                 </div>
               </div>
@@ -184,27 +261,31 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="section-spacing bg-gradient-hero">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-6">
+            <h2 className="font-bold text-primary-foreground mb-8">
               هل أنتم مستعدون لتنظيم فعاليتكم؟
             </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              دعونا نساعدكم في إنشاء ذكريات لا تُنسى. تواصلوا معنا اليوم لمناقشة تفاصيل فعاليتكم
+            <p className="text-xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto text-elegant">
+              دعونا نساعدكم في إنشاء ذكريات لا تُنسى وتنظيم فعالية استثنائية تعكس ذوقكم الرفيع وتحقق تطلعاتكم. 
+              تواصلوا معنا اليوم لمناقشة تفاصيل مشروعكم
             </p>
             
             <Button 
               asChild
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-gold px-8 py-3 text-lg"
+              variant="gold"
+              size="xl"
+              className="hover-glow"
             >
               <Link to="/contact">
-                احجز استشارة مجانية
-                <ArrowLeft className="mr-2 h-5 w-5" />
+                احجز استشارة مجانية الآن
+                <ArrowLeft className="mr-3 h-6 w-6" />
               </Link>
             </Button>
           </motion.div>

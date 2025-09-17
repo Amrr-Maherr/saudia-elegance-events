@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -24,39 +24,42 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
 
   return (
     <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed top-0 right-0 left-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-elegant"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-0 right-0 left-0 z-50 backdrop-luxury border-b shadow-subtle"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="group">
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-gold bg-clip-text text-transparent"
+              whileTap={{ scale: 0.95 }}
+              className="text-3xl font-bold text-luxury transition-all duration-300 group-hover:text-luxury"
             >
               تنظيم الفعاليات
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 space-x-reverse">
+          <div className="hidden md:flex items-center space-x-2 space-x-reverse">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
                   isActive(item.href)
-                    ? 'text-accent'
-                    : 'text-foreground hover:text-accent'
+                    ? 'text-accent bg-elegant shadow-subtle'
+                    : 'text-foreground hover:text-accent hover:bg-calm'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 right-0 left-0 h-0.5 bg-gradient-gold"
+                    className="absolute inset-0 bg-elegant rounded-full shadow-subtle"
+                    style={{ zIndex: -1 }}
                   />
                 )}
               </Link>
@@ -67,9 +70,19 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
               variant="ghost"
               size="sm"
               onClick={toggleDarkMode}
-              className="text-foreground hover:text-accent"
+              className="ml-4 text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
             >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={darkMode ? 'sun' : 'moon'}
+                  initial={{ rotate: 90, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  exit={{ rotate: -90, scale: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                </motion.div>
+              </AnimatePresence>
             </Button>
           </div>
 
@@ -79,47 +92,66 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
               variant="ghost"
               size="sm"
               onClick={toggleDarkMode}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
             >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={isOpen ? 'close' : 'menu'}
+                  initial={{ rotate: isOpen ? 0 : 180, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: isOpen ? 180 : 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </motion.div>
+              </AnimatePresence>
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors ${
-                    isActive(item.href)
-                      ? 'text-accent bg-elegant'
-                      : 'text-foreground hover:text-accent hover:bg-elegant'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, y: -10 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="px-4 pt-4 pb-6 space-y-2 bg-card/50 backdrop-blur-sm rounded-2xl mx-4 mb-4 shadow-elegant">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                        isActive(item.href)
+                          ? 'text-accent bg-elegant shadow-subtle'
+                          : 'text-foreground hover:text-accent hover:bg-calm'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

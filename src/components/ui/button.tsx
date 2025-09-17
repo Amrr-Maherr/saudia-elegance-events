@@ -15,17 +15,18 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Arabic-specific elegant variants
+        // Arabic-specific elegant variants using exact color specifications
         gold: "bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90 shadow-gold hover:shadow-xl font-semibold",
-        elegant: "bg-elegant text-elegant-foreground hover:bg-elegant/80 shadow-elegant",
+        elegant: "bg-elegant text-elegant-foreground hover:bg-elegant/90 shadow-elegant hover:shadow-gold border border-border/50",
         hero: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-gold hover:shadow-xl font-semibold",
-        minimal: "bg-card text-card-foreground border border-border hover:bg-elegant hover:border-accent shadow-elegant hover:shadow-gold",
+        minimal: "bg-card text-card-foreground border border-border hover:bg-elegant hover:border-accent shadow-elegant hover:shadow-gold backdrop-blur-sm",
+        calm: "bg-calm text-calm-foreground hover:bg-calm/80 shadow-subtle hover:shadow-elegant",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
+        xl: "h-14 rounded-xl px-12 text-lg font-medium",
         icon: "h-10 w-10",
       },
     },
