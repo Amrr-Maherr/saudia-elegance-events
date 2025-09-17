@@ -67,30 +67,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                 )}
               </Link>
             ))}
-
-            {/* Dark Mode Toggle */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleDarkMode}
-              className="ml-4 text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={darkMode ? "sun" : "moon"}
-                  initial={{ rotate: 90, scale: 0 }}
-                  animate={{ rotate: 0, scale: 1 }}
-                  exit={{ rotate: -90, scale: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {darkMode ? (
-                    <Sun className="h-5 w-5" />
-                  ) : (
-                    <Moon className="h-5 w-5" />
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </Button>
           </div>
 
           {/* Mobile menu button */}

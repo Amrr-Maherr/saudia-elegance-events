@@ -111,9 +111,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-accent font-medium mb-2">
-                      {item.info}
-                    </p>
+                    <p className="text-accent font-medium mb-2">{item.info}</p>
                     <p className="text-sm text-muted-foreground">
                       {item.description}
                     </p>
@@ -139,7 +137,10 @@ const Contact = () => {
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-foreground mb-2"
+                      >
                         الاسم الكامل
                       </label>
                       <Input
@@ -155,7 +156,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-foreground mb-2"
+                      >
                         رقم الهاتف
                       </label>
                       <Input
@@ -171,7 +175,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-foreground mb-2"
+                      >
                         الرسالة
                       </label>
                       <Textarea
@@ -215,7 +222,10 @@ const Contact = () => {
               className="space-y-8"
             >
               {/* WhatsApp CTA */}
-              <Card className="bg-gradient-gold shadow-gold">
+              <Card
+                onClick={handleWhatsAppClick}
+                className="bg-gradient-gold shadow-gold !cursor-pinter"
+              >
                 <CardContent className="p-8 text-center">
                   <MessageCircle className="h-16 w-16 text-luxury-foreground mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-luxury-foreground mb-4">
@@ -224,13 +234,6 @@ const Contact = () => {
                   <p className="text-luxury-foreground/90 mb-6">
                     للحصول على رد فوري وسريع على استفساراتكم
                   </p>
-                  <Button
-                    onClick={handleWhatsAppClick}
-                    className="bg-luxury-foreground text-luxury hover:bg-luxury-foreground/90 w-full"
-                  >
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    فتح واتساب
-                  </Button>
                 </CardContent>
               </Card>
 
@@ -245,15 +248,25 @@ const Contact = () => {
                   </h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center border-b border-border pb-2">
-                      <span className="text-foreground font-medium">السبت - الخميس</span>
-                      <span className="text-muted-foreground">9:00 ص - 10:00 م</span>
+                      <span className="text-foreground font-medium">
+                        السبت - الخميس
+                      </span>
+                      <span className="text-muted-foreground">
+                        9:00 ص - 10:00 م
+                      </span>
                     </div>
                     <div className="flex justify-between items-center border-b border-border pb-2">
-                      <span className="text-foreground font-medium">الجمعة</span>
-                      <span className="text-muted-foreground">2:00 م - 10:00 م</span>
+                      <span className="text-foreground font-medium">
+                        الجمعة
+                      </span>
+                      <span className="text-muted-foreground">
+                        2:00 م - 10:00 م
+                      </span>
                     </div>
                     <div className="text-center pt-4">
-                      <span className="text-accent font-medium">متاح للطوارئ 24/7</span>
+                      <span className="text-accent font-medium">
+                        متاح للطوارئ 24/7
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -267,10 +280,14 @@ const Contact = () => {
                     مناطق الخدمة
                   </h3>
                   <div className="text-center space-y-2">
-                    <p className="text-elegant-foreground">الرياض والمناطق المحيطة</p>
+                    <p className="text-elegant-foreground">
+                      الرياض والمناطق المحيطة
+                    </p>
                     <p className="text-elegant-foreground">جدة ومكة المكرمة</p>
                     <p className="text-elegant-foreground">الدمام والخبر</p>
-                    <p className="text-accent font-medium mt-4">وجميع مناطق المملكة</p>
+                    <p className="text-accent font-medium mt-4">
+                      وجميع مناطق المملكة
+                    </p>
                   </div>
                 </CardContent>
               </Card>

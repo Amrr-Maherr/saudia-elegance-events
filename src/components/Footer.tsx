@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Heart, MapPin, Phone, Mail, Crown, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Facebook, Instagram, Twitter,  } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,6 +23,12 @@ const Footer = () => {
     "خدمات الضيافة المتكاملة",
     "التصوير والتوثيق",
     "التنسيق اللوجستي",
+  ];
+
+  const socialMedia = [
+    { icon: Facebook, link: "https://facebook.com" },
+    { icon: Instagram, link: "https://instagram.com" },
+    { icon: Twitter, link: "https://twitter.com" },
   ];
 
   return (
@@ -64,7 +71,7 @@ const Footer = () => {
                 والأناقة في المملكة العربية السعودية منذ أكثر من 10 سنوات
               </p>
 
-              <div className="flex items-center space-x-4 space-x-reverse">
+              <div className="flex items-center space-x-4 space-x-reverse mb-6">
                 <div className="flex items-center space-x-2 space-x-reverse">
                   <Award className="h-5 w-5 text-luxury" />
                   <span className="text-primary-foreground/80">
@@ -78,6 +85,26 @@ const Footer = () => {
                     100% رضا العملاء
                   </span>
                 </div>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="flex items-center space-x-4 space-x-reverse">
+                {socialMedia.map((item, index) => (
+                  <motion.a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-primary-foreground/70 hover:text-luxury transition-colors duration-300"
+                  >
+                    <item.icon className="h-6 w-6" />
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
           </div>

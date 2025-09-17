@@ -1,103 +1,108 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Crown, Users, Sparkles, CheckCircle, Star, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowLeft,
+  Crown,
+  Users,
+  Sparkles,
+  CheckCircle,
+  Star,
+  Award,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Home = () => {
   const services = [
     {
       icon: Crown,
-      title: 'حفلات الزفاف',
-      description: 'تنظيم حفلات زفاف راقية ومميزة تترك ذكريات لا تُنسى مع الاهتمام بأدق التفاصيل'
+      title: "حفلات الزفاف",
+      description:
+        "تنظيم حفلات زفاف راقية ومميزة تترك ذكريات لا تُنسى مع الاهتمام بأدق التفاصيل",
     },
     {
       icon: Users,
-      title: 'مراسم العزاء',
-      description: 'تنظيم مراسم العزاء بكل احترام ومهنية وفقاً للتقاليد السعودية الأصيلة'
+      title: "مراسم العزاء",
+      description:
+        "تنظيم مراسم العزاء بكل احترام ومهنية وفقاً للتقاليد السعودية الأصيلة",
     },
     {
       icon: Sparkles,
-      title: 'خدمات متكاملة',
-      description: 'من التخطيط إلى التنفيذ، نوفر كل ما تحتاجونه لإنجاح فعاليتكم بأعلى المعايير'
-    }
+      title: "خدمات متكاملة",
+      description:
+        "من التخطيط إلى التنفيذ، نوفر كل ما تحتاجونه لإنجاح فعاليتكم بأعلى المعايير",
+    },
   ];
 
   const features = [
-    { text: 'خبرة أكثر من 10 سنوات في المملكة', icon: Award },
-    { text: 'فريق محترف ومتخصص', icon: Users },
-    { text: 'خدمات متكاملة وشاملة', icon: Sparkles },
-    { text: 'أسعار تنافسية ومناسبة', icon: Star }
+    { text: "خبرة أكثر من 10 سنوات في المملكة", icon: Award },
+    { text: "فريق محترف ومتخصص", icon: Users },
+    { text: "خدمات متكاملة وشاملة", icon: Sparkles },
+    { text: "أسعار تنافسية ومناسبة", icon: Star },
   ];
 
   const stats = [
-    { number: '+500', label: 'فعالية ناجحة تم تنظيمها', delay: 0 },
-    { number: '+300', label: 'حفل زفاف مميز', delay: 0.1 },
-    { number: '+200', label: 'مراسم عزاء محترمة', delay: 0.2 },
-    { number: '100%', label: 'رضا وثقة العملاء', delay: 0.3 }
+    { number: "+500", label: "فعالية ناجحة تم تنظيمها", delay: 0 },
+    { number: "+300", label: "حفل زفاف مميز", delay: 0.1 },
+    { number: "+200", label: "مراسم عزاء محترمة", delay: 0.2 },
+    { number: "100%", label: "رضا وثقة العملاء", delay: 0.3 },
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/10" />
-        
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/10 dark:to-gray-800/30" />
+
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <motion.h1 
-              className="font-bold text-primary-foreground mb-8 text-balance"
+            <motion.h1
+              className="font-bold text-primary-foreground dark:text-white mb-8 text-balance"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               تنظيم المناسبات
-              <span className="block text-luxury mt-4">
+              <span className="block text-luxury dark:text-yellow-400 mt-4">
                 بمهنية وأناقة استثنائية
               </span>
             </motion.h1>
-            
-            <motion.p 
-              className="text-xl sm:text-2xl text-primary-foreground/90 mb-12 max-w-4xl mx-auto leading-relaxed text-elegant"
+
+            <motion.p
+              className="text-xl sm:text-2xl text-primary-foreground/90 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed text-elegant"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              نحن نساعدكم في تنظيم فعالياتكم المهمة بأعلى مستوى من الاحترافية والتميز في المملكة العربية السعودية، 
-              مع الحفاظ على التقاليد الأصيلة واللمسة العصرية الراقية
+              نحن نساعدكم في تنظيم فعالياتكم المهمة بأعلى مستوى من الاحترافية
+              والتميز في المملكة العربية السعودية، مع الحفاظ على التقاليد
+              الأصيلة واللمسة العصرية الراقية
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-6 justify-center items-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Button 
-                asChild
-                variant="gold"
-                size="xl"
-                className="hover-glow"
-              >
+              <Button asChild variant="gold" size="xl" className="hover-glow">
                 <Link to="/contact">
                   تواصل معنا الآن
                   <ArrowLeft className="mr-3 h-6 w-6" />
                 </Link>
               </Button>
-              
-              <Button 
+
+              <Button
                 asChild
                 variant="minimal"
                 size="xl"
-                className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10"
+                className="border-primary-foreground/30 text-primary-foreground dark:border-gray-400 dark:text-gray-300 bg-primary-foreground/10 dark:bg-gray-800"
               >
-                <Link to="/gallery">
-                  اطلع على أعمالنا
-                </Link>
+                <Link to="/gallery">اطلع على أعمالنا</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -105,21 +110,21 @@ const Home = () => {
 
         {/* Floating decoration */}
         <motion.div
-          className="absolute top-20 right-20 w-32 h-32 rounded-full bg-luxury/10 blur-3xl"
+          className="absolute top-20 right-20 w-32 h-32 rounded-full bg-luxury/10 dark:bg-yellow-400/20 blur-3xl"
           animate={{
             y: [0, -20, 0],
-            opacity: [0.3, 0.6, 0.3]
+            opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
       </section>
 
       {/* Services Section */}
-      <section className="section-spacing bg-gradient-calm">
+      <section className="section-spacing bg-gradient-calm dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -128,12 +133,13 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="font-bold text-foreground mb-6">
+            <h2 className="font-bold text-foreground dark:text-white mb-6">
               خدماتنا المميزة
             </h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-elegant">
-              نقدم مجموعة شاملة من الخدمات المتخصصة لضمان نجاح فعالياتكم وتحقيق تطلعاتكم بأعلى معايير الجودة والأناقة
+            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-elegant">
+              نقدم مجموعة شاملة من الخدمات المتخصصة لضمان نجاح فعالياتكم وتحقيق
+              تطلعاتكم بأعلى معايير الجودة والأناقة
             </p>
           </motion.div>
 
@@ -147,15 +153,15 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <Card className="h-full bg-card shadow-subtle hover-lift border-border/50">
+                <Card className="h-full bg-card dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
                   <CardContent className="p-10 text-center">
                     <div className="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="h-10 w-10 text-luxury-foreground" />
+                      <service.icon className="h-10 w-10 text-luxury-foreground dark:text-yellow-400" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-6">
+                    <h3 className="text-2xl font-semibold text-foreground dark:text-white mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-elegant">
+                    <p className="text-muted-foreground dark:text-gray-300 leading-relaxed text-elegant">
                       {service.description}
                     </p>
                   </CardContent>
@@ -167,7 +173,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing bg-background dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -179,11 +185,11 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="bg-gradient-elegant rounded-2xl p-8 hover-lift">
-                  <div className="text-4xl lg:text-5xl font-bold text-accent mb-4">
+                <div className="bg-gradient-elegant dark:bg-gray-700 rounded-2xl p-8 hover-lift">
+                  <div className="text-4xl lg:text-5xl font-bold text-accent dark:text-yellow-400 mb-4">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground font-medium">
+                  <div className="text-muted-foreground dark:text-gray-300 font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -194,7 +200,7 @@ const Home = () => {
       </section>
 
       {/* About Preview Section */}
-      <section className="section-spacing bg-gradient-calm">
+      <section className="section-spacing bg-gradient-calm dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -203,14 +209,15 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-bold text-foreground mb-8">
+              <h2 className="font-bold text-foreground dark:text-white mb-8">
                 لماذا تختارونا؟
               </h2>
-              <p className="text-xl text-muted-foreground mb-10 leading-relaxed text-elegant">
-                نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات منذ أكثر من عقد من الزمان. 
-                فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير الجودة والأناقة، مع الحفاظ على التقاليد السعودية الأصيلة.
+              <p className="text-xl text-muted-foreground dark:text-gray-300 mb-10 leading-relaxed text-elegant">
+                نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات منذ أكثر من
+                عقد من الزمان. فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير
+                الجودة والأناقة، مع الحفاظ على التقاليد السعودية الأصيلة.
               </p>
-              
+
               <div className="space-y-6 mb-10">
                 {features.map((feature, index) => (
                   <motion.div
@@ -221,15 +228,22 @@ const Home = () => {
                     viewport={{ once: true }}
                     className="flex items-center space-x-4 space-x-reverse group"
                   >
-                    <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="h-6 w-6 text-luxury-foreground" />
+                    <div className="w-12 h-12 bg-gradient-gold dark:bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="h-6 w-6 text-luxury-foreground dark:text-white" />
                     </div>
-                    <span className="text-foreground font-medium text-lg">{feature.text}</span>
+                    <span className="text-foreground dark:text-white font-medium text-lg">
+                      {feature.text}
+                    </span>
                   </motion.div>
                 ))}
               </div>
 
-              <Button asChild variant="elegant" size="lg" className="hover-glow">
+              <Button
+                asChild
+                variant="elegant"
+                size="lg"
+                className="hover-glow"
+              >
                 <Link to="/about">
                   اعرف المزيد عنا
                   <ArrowLeft className="mr-3 h-5 w-5" />
@@ -244,13 +258,13 @@ const Home = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-gold rounded-3xl p-2 shadow-luxury">
-                <div className="bg-card rounded-2xl p-12 text-center">
-                  <Crown className="h-24 w-24 text-accent mx-auto mb-8" />
-                  <h3 className="text-4xl font-bold text-foreground mb-4">
+              <div className="bg-gradient-gold dark:bg-yellow-500 rounded-3xl p-2 shadow-luxury">
+                <div className="bg-card dark:bg-gray-900 rounded-2xl p-12 text-center">
+                  <Crown className="h-24 w-24 text-accent dark:text-yellow-400 mx-auto mb-8" />
+                  <h3 className="text-4xl font-bold text-foreground dark:text-white mb-4">
                     التميز والإتقان
                   </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
+                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
                     نسعى لتحقيق أحلامكم وجعل فعالياتكم استثنائية لا تُنسى
                   </p>
                 </div>
@@ -260,8 +274,77 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="section-spacing bg-gradient-calm dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-bold text-foreground dark:text-white mb-4">
+              آراء العملاء
+            </h2>
+            <div className="divider-gold max-w-24 mx-auto mb-6" />
+            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-elegant">
+              ما يقوله عملاؤنا عن خدماتنا في تنظيم الفعاليات واهتمامنا بأدق
+              التفاصيل.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "أحمد السليمان",
+                feedback:
+                  "كانت تجربة رائعة! الفريق محترف جدًا واهتموا بكل تفاصيل حفل زفافنا.",
+                avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+              },
+              {
+                name: "فاطمة الحربي",
+                feedback:
+                  "تنظيم مراسم العزاء كان محترم ومهني، وشعرنا بالراحة طوال العملية.",
+                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+              },
+              {
+                name: "سعود القرشي",
+                feedback:
+                  "خدمات متكاملة وفريق ملتزم. أنصح بهم بشدة لأي مناسبة.",
+                avatar: "https://randomuser.me/api/portraits/men/56.jpg",
+              },
+            ].map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-card dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
+                  <CardContent className="p-8 text-center">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow-md"
+                    />
+                    <p className="text-muted-foreground dark:text-gray-300 leading-relaxed mb-4 text-elegant">
+                      "{testimonial.feedback}"
+                    </p>
+                    <h4 className="text-lg font-semibold text-foreground dark:text-white">
+                      {testimonial.name}
+                    </h4>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="section-spacing bg-gradient-hero">
+      <section className="section-spacing bg-gradient-hero dark:bg-gray-900">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -269,20 +352,16 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-bold text-primary-foreground mb-8">
+            <h2 className="font-bold text-primary-foreground dark:text-white mb-8">
               هل أنتم مستعدون لتنظيم فعاليتكم؟
             </h2>
-            <p className="text-xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto text-elegant">
-              دعونا نساعدكم في إنشاء ذكريات لا تُنسى وتنظيم فعالية استثنائية تعكس ذوقكم الرفيع وتحقق تطلعاتكم. 
-              تواصلوا معنا اليوم لمناقشة تفاصيل مشروعكم
+            <p className="text-xl text-primary-foreground/90 dark:text-gray-300 mb-12 max-w-3xl mx-auto text-elegant">
+              دعونا نساعدكم في إنشاء ذكريات لا تُنسى وتنظيم فعالية استثنائية
+              تعكس ذوقكم الرفيع وتحقق تطلعاتكم. تواصلوا معنا اليوم لمناقشة
+              تفاصيل مشروعكم
             </p>
-            
-            <Button 
-              asChild
-              variant="gold"
-              size="xl"
-              className="hover-glow"
-            >
+
+            <Button asChild variant="gold" size="xl" className="hover-glow">
               <Link to="/contact">
                 احجز استشارة مجانية الآن
                 <ArrowLeft className="mr-3 h-6 w-6" />
