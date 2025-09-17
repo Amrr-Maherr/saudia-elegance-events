@@ -2,95 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Arabic Event Planning Design System - Elegant & Luxurious
+All colors MUST be HSL. Arabic RTL optimized.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Light theme */
+    --background: 45 30% 98%;           /* Warm off-white */
+    --foreground: 160 90% 8%;           /* Deep dark green */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;                  /* Pure white */
+    --card-foreground: 160 90% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 160 90% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Dark green (elegant, professional) */
+    --primary: 160 90% 12%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm beige */
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 160 90% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gold accent - Luxury touch */
+    --accent: 45 90% 50%;               /* Rich gold */
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted tones */
+    --muted: 40 15% 95%;
+    --muted-foreground: 160 20% 35%;
+
+    /* Luxury gold variant */
+    --luxury: 45 90% 50%;
+    --luxury-foreground: 0 0% 100%;
+
+    /* Elegant beige */
+    --elegant: 40 25% 88%;
+    --elegant-foreground: 160 90% 8%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 15% 88%;
+    --input: 40 15% 95%;
+    --ring: 45 90% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom gradient variables */
+    --gradient-hero: linear-gradient(135deg, hsl(160 90% 12%), hsl(160 70% 18%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 50%), hsl(45 85% 45%));
+    --gradient-elegant: linear-gradient(180deg, hsl(40 25% 98%), hsl(40 20% 92%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -4px hsl(160 90% 12% / 0.1);
+    --shadow-gold: 0 8px 32px -8px hsl(45 90% 50% / 0.2);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Base colors - Dark theme */
+    --background: 160 80% 4%;           /* Very dark green */
+    --foreground: 40 25% 95%;           /* Warm white */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 160 60% 6%;
+    --card-foreground: 40 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 160 60% 6%;
+    --popover-foreground: 40 25% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Light for dark theme */
+    --primary: 45 90% 55%;              /* Brighter gold for dark */
+    --primary-foreground: 160 80% 4%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary - Dark beige */
+    --secondary: 160 40% 12%;
+    --secondary-foreground: 40 25% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Gold accent - Adjusted for dark */
+    --accent: 45 85% 60%;
+    --accent-foreground: 160 80% 4%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Muted tones for dark */
+    --muted: 160 40% 12%;
+    --muted-foreground: 40 15% 70%;
+
+    /* Luxury gold variant for dark */
+    --luxury: 45 85% 60%;
+    --luxury-foreground: 160 80% 4%;
+
+    /* Elegant beige for dark */
+    --elegant: 160 30% 15%;
+    --elegant-foreground: 40 25% 95%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 25% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 160 40% 15%;
+    --input: 160 40% 12%;
+    --ring: 45 85% 60%;
+
+    /* Custom gradient variables for dark */
+    --gradient-hero: linear-gradient(135deg, hsl(160 80% 4%), hsl(160 60% 8%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 60%), hsl(45 80% 55%));
+    --gradient-elegant: linear-gradient(180deg, hsl(160 60% 6%), hsl(160 40% 12%));
+    
+    /* Shadows for dark */
+    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-gold: 0 8px 32px -8px hsl(45 85% 60% / 0.2);
   }
 }
 
@@ -99,7 +119,53 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    direction: rtl;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-normal;
+    line-height: 1.7;
+  }
+
+  /* Arabic typography enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* Smooth animations */
+  * {
+    transition: all 0.2s ease;
+  }
+}
+
+@layer components {
+  /* Hero gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+
+  /* Custom shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Arabic text utilities */
+  .text-balance {
+    text-wrap: balance;
   }
 }
