@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -14,16 +14,16 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'الرئيسية', href: '/' },
-    { name: 'من نحن', href: '/about' },
-    { name: 'معرض الأعمال', href: '/gallery' },
-    { name: 'تواصل معنا', href: '/contact' },
+    { name: "الرئيسية", href: "/" },
+    { name: "من نحن", href: "/about" },
+    { name: "معرض الأعمال", href: "/gallery" },
+    { name: "تواصل معنا", href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -32,16 +32,19 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="group">
-            <motion.div 
+          <Link to="/" className="group block">
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-3xl font-bold text-luxury transition-all duration-300 group-hover:text-luxury"
+              className="transition-all duration-300 group-hover:scale-105"
             >
-              تنظيم الفعاليات
+              <img
+                src="/WhatsApp Image 2025-09-17 at 18.22.05_67e6dbb9.jpg"
+                alt="Event"
+                className="md:!w-13 md:!h-13 w-10 h-10 rounded-full object-cover shadow-lg"
+              />
             </motion.div>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2 space-x-reverse">
             {navItems.map((item) => (
@@ -50,8 +53,8 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                 to={item.href}
                 className={`relative px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
                   isActive(item.href)
-                    ? 'text-accent bg-elegant shadow-subtle'
-                    : 'text-foreground hover:text-accent hover:bg-calm'
+                    ? "text-accent bg-elegant shadow-subtle"
+                    : "text-foreground hover:text-accent hover:bg-calm"
                 }`}
               >
                 {item.name}
@@ -64,7 +67,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                 )}
               </Link>
             ))}
-            
+
             {/* Dark Mode Toggle */}
             <Button
               variant="ghost"
@@ -74,13 +77,17 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             >
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={darkMode ? 'sun' : 'moon'}
+                  key={darkMode ? "sun" : "moon"}
                   initial={{ rotate: 90, scale: 0 }}
                   animate={{ rotate: 0, scale: 1 }}
                   exit={{ rotate: -90, scale: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  {darkMode ? (
+                    <Sun className="h-5 w-5" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )}
                 </motion.div>
               </AnimatePresence>
             </Button>
@@ -94,7 +101,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
               onClick={toggleDarkMode}
               className="text-foreground hover:text-accent hover:bg-calm rounded-full p-3"
             >
-              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {darkMode ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
@@ -104,13 +115,17 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             >
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={isOpen ? 'close' : 'menu'}
+                  key={isOpen ? "close" : "menu"}
                   initial={{ rotate: isOpen ? 0 : 180, opacity: 0 }}
                   animate={{ rotate: 0, opacity: 1 }}
                   exit={{ rotate: isOpen ? 180 : 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  {isOpen ? (
+                    <X className="h-6 w-6" />
+                  ) : (
+                    <Menu className="h-6 w-6" />
+                  )}
                 </motion.div>
               </AnimatePresence>
             </Button>
@@ -122,7 +137,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
               exit={{ opacity: 0, height: 0, y: -10 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="md:hidden overflow-hidden"
@@ -140,8 +155,8 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                       onClick={() => setIsOpen(false)}
                       className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
                         isActive(item.href)
-                          ? 'text-accent bg-elegant shadow-subtle'
-                          : 'text-foreground hover:text-accent hover:bg-calm'
+                          ? "text-accent bg-elegant shadow-subtle"
+                          : "text-foreground hover:text-accent hover:bg-calm"
                       }`}
                     >
                       {item.name}
