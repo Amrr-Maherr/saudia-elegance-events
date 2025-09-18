@@ -8,6 +8,7 @@ All colors converted to HSL for consistency.
 */
 body {
   overflow-x: hidden !important;
+  font-family: "Tajawal", sans-serif;
 }
 @layer base {
   :root {
@@ -138,7 +139,7 @@ body {
   }
 
   html {
-    font-family: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Tajawal', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     direction: rtl;
     scroll-behavior: smooth;
   }

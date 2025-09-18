@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-// import WhatsAppFloat from "./components/WhatsAppFloat";
+import "../src/index.css"
 
 const queryClient = new QueryClient();
 
