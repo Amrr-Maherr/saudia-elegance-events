@@ -64,7 +64,7 @@ const Gallery = () => {
     : galleryItems.filter(item => item.category === filter);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 overflow-hidden">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-elegant">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -96,8 +96,8 @@ const Gallery = () => {
                 variant={filter === category.key ? "default" : "secondary"}
                 className={`cursor-pointer px-6 py-2 text-sm font-medium transition-all duration-200 ${
                   filter === category.key
-                    ? 'bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90'
-                    : 'bg-secondary text-secondary-foreground hover:bg-elegant'
+                    ? "bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90"
+                    : "bg-secondary text-secondary-foreground hover:bg-elegant"
                 }`}
                 onClick={() => setFilter(category.key)}
               >
@@ -121,10 +121,10 @@ const Gallery = () => {
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
+                transition={{
                   duration: 0.3,
                   delay: index * 0.1,
-                  layout: { duration: 0.3 }
+                  layout: { duration: 0.3 },
                 }}
                 whileHover={{ y: -8 }}
                 className="group"
@@ -151,11 +151,14 @@ const Gallery = () => {
                       {item.description}
                     </p>
                     <div className="mt-4">
-                      <Badge 
-                        variant="secondary" 
+                      <Badge
+                        variant="secondary"
                         className="bg-elegant text-elegant-foreground"
                       >
-                        {categories.find(cat => cat.key === item.category)?.label}
+                        {
+                          categories.find((cat) => cat.key === item.category)
+                            ?.label
+                        }
                       </Badge>
                     </div>
                   </CardContent>
@@ -183,10 +186,10 @@ const Gallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '+500', label: 'فعالية منجزة' },
-              { number: '+300', label: 'حفل زفاف' },
-              { number: '+200', label: 'مراسم عزاء' },
-              { number: '100%', label: 'رضا العملاء' }
+              { number: "+500", label: "فعالية منجزة" },
+              { number: "+300", label: "حفل زفاف" },
+              { number: "+200", label: "مراسم عزاء" },
+              { number: "100%", label: "رضا العملاء" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -198,9 +201,7 @@ const Gallery = () => {
                 <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">
                   {stat.number}
                 </div>
-                <div className="text-primary-foreground/80">
-                  {stat.label}
-                </div>
+                <div className="text-primary-foreground/80">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -218,13 +219,11 @@ const Gallery = () => {
               هل أعجبتكم أعمالنا؟
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              نحن مستعدون لتنظيم فعاليتكم القادمة بنفس المستوى من التميز والإبداع
+              نحن مستعدون لتنظيم فعاليتكم القادمة بنفس المستوى من التميز
+              والإبداع
             </p>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
                 href="/contact"
                 className="inline-flex items-center px-8 py-4 bg-gradient-gold text-luxury-foreground font-semibold rounded-lg shadow-gold hover:shadow-xl transition-all duration-300"
