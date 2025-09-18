@@ -6,7 +6,9 @@
 Exact color specifications: White #FFFFFF, Beige #F5F5DC, Gold #D4AF37, Dark Green #013220, Black #000000
 All colors converted to HSL for consistency.
 */
-
+body {
+  overflow-x: hidden !important;
+}
 @layer base {
   :root {
     /* Exact color specifications converted to HSL */
