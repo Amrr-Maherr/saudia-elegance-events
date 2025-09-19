@@ -39,7 +39,7 @@ const Contact = () => {
       icon: MapPin,
       title: "الموقع",
       info: "الدمام، المملكة العربية السعودية",
-      description: "نخدم جميع مناطق المملكة",
+      description: "(المنطقه الشرقيه)",
     },
   ];
 
