@@ -267,11 +267,6 @@ const Contact = () => {
                       <span className="text-[#580012] font-medium">الجمعة</span>
                       <span className="text-[#580012]">2:00 م - 10:00 م</span>
                     </div>
-                    <div className="text-center pt-4">
-                      <span className="text-accent font-medium">
-                        متاح للطوارئ 24/7
-                      </span>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -283,13 +278,9 @@ const Contact = () => {
                     مناطق الخدمة
                   </h3>
                   <div className="text-center space-y-2">
-                    <p className="text-elegant-foreground">
-                      الدمام والمناطق المحيطة
-                    </p>
-                    <p className="text-elegant-foreground">جدة ومكة المكرمة</p>
-                    <p className="text-elegant-foreground">(المنطقه الشرقيه)</p>
+                    <p className="text-elegant-foreground">الدمام</p>
                     <p className="text-accent font-medium mt-4">
-                      وجميع مناطق المملكة
+                      (المنطقه الشرقيه)
                     </p>
                   </div>
                 </CardContent>
@@ -319,10 +310,10 @@ const Contact = () => {
               </div>
               <div className="bg-primary-foreground/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-primary-foreground mb-2">
-                  هل تقدمون خدمات خارج الدمام؟
+                  هل تقدمون خدمات في الدمام؟
                 </h3>
                 <p className="text-primary-foreground/80">
-                  نعم، نقدم خدماتنا في جميع أنحاء المملكة العربية السعودية
+                  نعم، نقدم خدماتنا في الدمام فقط ضمن المنطقة الشرقية
                 </p>
               </div>
             </div>

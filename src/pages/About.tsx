@@ -42,7 +42,7 @@ const About = () => {
               من نحن
             </h1>
             <p className="text-xl text-[#580012] leading-relaxed">
-              نحن فريق متخصص في تنظيم الفعاليات بخبرة تزيد عن 10 سنوات في
+              نحن فريق متخصص في تنظيم الفعاليات  في
               المملكة العربية السعودية
             </p>
           </motion.div>
@@ -95,9 +95,7 @@ const About = () => {
                         <div className="text-2xl font-bold text-accent mb-2">
                           {stat.number}
                         </div>
-                        <div className="text-sm !text-white">
-                          {stat.label}
-                        </div>
+                        <div className="text-sm !text-white">{stat.label}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -109,7 +107,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-elegant">
+      <section className="py-20 bg-gradient-calm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -133,7 +131,7 @@ const About = () => {
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="h-full bg-card shadow-elegant hover:shadow-gold transition-all duration-300 text-center">
+                <Card className="h-full bg-white shadow-elegant hover:shadow-gold transition-all duration-300 text-center">
                   <CardContent className="p-8">
                     <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
                       <value.icon className="h-8 w-8 text-luxury-foreground" />

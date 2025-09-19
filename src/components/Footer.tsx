@@ -27,9 +27,7 @@ const Footer = () => {
   ];
 
   const socialMedia = [
-    { icon: Facebook, link: "https://facebook.com" },
     { icon: Instagram, link: "https://instagram.com/Fushi.40" },
-    { icon: Twitter, link: "https://twitter.com" },
   ];
 
   return (
@@ -37,7 +35,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       className="bg-gradient-hero text-primary-foreground relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-gold" />
@@ -66,8 +64,7 @@ const Footer = () => {
               </Link>
 
               <p className="text-primary-foreground/90 leading-relaxed text-lg mb-8 max-w-md">
-                نحن نقدم خدمات تنظيم الأفراح والعزاء بأعلى مستوى من المهنية
-                والأناقة في المملكة العربية السعودية منذ أكثر من 10 سنوات
+                نحن فريق متخصص في تنظيم الفعاليات في المملكة العربية السعودية
               </p>
 
               <div className="flex items-center space-x-4 space-x-reverse mb-6">
@@ -178,7 +175,9 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-foreground/70 flex items-center space-x-2 space-x-reverse">
-              <span>© {currentYear} تنظيم الفعاليات. جميع الحقوق محفوظة.</span>
+              <span>
+                فوشي لتنظيم الفعاليات. جميع الحقوق محفوظة. © {currentYear}
+              </span>
             </p>
             <div className="flex items-center space-x-2 space-x-reverse text-primary-foreground/70">
               <span>صُنع بـ</span>

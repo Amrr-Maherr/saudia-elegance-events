@@ -230,21 +230,21 @@ const Home = () => {
                 feedback:
                   "كانت تجربة رائعة! الفريق محترف جدًا واهتموا بكل تفاصيل حفل زفافنا.",
                 avatar:
-                  "/images/WhatsApp Image 2025-09-19 at 21.08.54_791e9d94.jpg",
+                  "/images/WhatsApp1.jpg",
               },
               {
                 name: "فاطمة الحربي",
                 feedback:
                   "تنظيم مراسم العزاء كان محترم ومهني، وشعرنا بالراحة طوال العملية.",
                 avatar:
-                  "/images/WhatsApp Image 2025-09-19 at 21.10.27_2a653221.jpg",
+                  "/images/WhatsApp2.jpg",
               },
               {
                 name: "سعود القرشي",
                 feedback:
                   "خدمات متكاملة وفريق ملتزم. أنصح بهم بشدة لأي مناسبة.",
                 avatar:
-                  "/public/images/WhatsApp Image 2025-09-19 at 21.10.55_760efb3b.jpg",
+                  "/public/images/WhatsApp3.jpg",
               },
             ].map((testimonial, index) => (
               <motion.div
