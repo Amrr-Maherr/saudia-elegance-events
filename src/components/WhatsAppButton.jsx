@@ -1,6 +1,6 @@
 // WhatsAppButton.jsx
 import React from "react";
-import { MessageSquare } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 
 const WhatsAppButton = ({
   phoneNumber = "+966531606234",
@@ -34,7 +34,7 @@ const WhatsAppButton = ({
       rel="noopener noreferrer"
       style={styles}
     >
-      <MessageSquare size={30} />
+      <BsWhatsapp size={30} />
     </a>
   );
 };

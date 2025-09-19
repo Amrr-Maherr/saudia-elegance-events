@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import "../src/index.css"
 import WhatsAppButton from "../src/components/WhatsAppButton"
+import ScrollToTop from "../src/components/ScrollToTop";
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -57,7 +58,8 @@ const App = () => {
             </main>
             <Footer />
           </div>
-          <WhatsAppButton/>
+          <WhatsAppButton />
+          <ScrollToTop/>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
