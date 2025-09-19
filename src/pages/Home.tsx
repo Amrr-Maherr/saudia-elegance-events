@@ -82,7 +82,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <Card className="h-full bg-card dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
+                <Card className="h-full !bg-white dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
                   <CardContent className="p-10 text-center">
                     <div className="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="h-10 w-10 text-luxury-foreground dark:text-yellow-400" />
@@ -244,7 +244,7 @@ const Home = () => {
                 feedback:
                   "خدمات متكاملة وفريق ملتزم. أنصح بهم بشدة لأي مناسبة.",
                 avatar:
-                  "/images/WhatsApp Image 2025-09-19 at 21.10.55_760efb3b.jpg",
+                  "/public/images/WhatsApp Image 2025-09-19 at 21.10.55_760efb3b.jpg",
               },
             ].map((testimonial, index) => (
               <motion.div
@@ -254,7 +254,7 @@ const Home = () => {
                 transition={{ delay: index * 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-card dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
+                <Card className="h-full !bg-white dark:bg-gray-900 shadow-subtle hover-lift border-border/50">
                   <CardContent className="p-8 text-center">
                     <img
                       src={testimonial.avatar}
