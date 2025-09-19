@@ -65,16 +65,22 @@ body {
     --radius: 1rem;
 
     /* Luxurious gradients using exact colors */
-    --gradient-hero: linear-gradient(135deg, hsl(162 100% 10%), hsl(162 80% 15%));
-    --gradient-gold: linear-gradient(135deg, hsl(43 77% 52%), hsl(43 70% 48%));
-    --gradient-elegant: linear-gradient(180deg, hsl(0 0% 100%), hsl(60 56% 91%));
-    --gradient-calm: linear-gradient(180deg, hsl(60 20% 98%), hsl(60 30% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(162 100% 10%), #580012);
+      --gradient-gold: linear-gradient(135deg, #580012, #d4af37);
+      /* خلي الجزء الثاني ذهبي */
+      --gradient-elegant: linear-gradient(180deg, #ffffff, #f4e8c1);
+      /* درجات فاتحة */
+      --gradient-calm: linear-gradient(180deg, #f9f7f6, #f2ece7);
     
-    /* Sophisticated shadows */
-    --shadow-elegant: 0 8px 40px -12px hsl(162 100% 10% / 0.08);
-    --shadow-gold: 0 12px 48px -12px hsl(43 77% 52% / 0.15);
-    --shadow-luxury: 0 20px 64px -16px hsl(162 100% 10% / 0.06);
-    --shadow-subtle: 0 2px 16px -4px hsl(162 100% 10% / 0.04);
+      /* Sophisticated shadows */
+      --shadow-elegant: 0 8px 40px -12px #58001233;
+      /* opacity 0.2 تقريبا */
+      --shadow-gold: 0 12px 48px -12px #d4af3730;
+      /* ذهبي شفاف */
+      --shadow-luxury: 0 20px 64px -16px #5800121a;
+      /* 0.1 opacity */
+      --shadow-subtle: 0 2px 16px -4px #5800120a;
+      /* 0.04 opacity */
   }
 
   .dark {
