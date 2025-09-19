@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Hero from "@/components/hero";
 
 const Home = () => {
   const services = [
@@ -51,77 +52,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/10 dark:to-gray-800/30" />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center section-spacing">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <motion.h1
-              className="font-bold text-primary-foreground mb-8 text-balance"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              تنظيم المناسبات
-              <span className="block text-primary-foreground mt-4">
-                بمهنية وأناقة استثنائية
-              </span>
-            </motion.h1>
-
-            <motion.p
-              className="text-xl sm:text-2xl text-primary-foreground/90 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed text-elegant"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              نحن نساعدكم في تنظيم فعالياتكم المهمة بأعلى مستوى من الاحترافية
-              والتميز في المملكة العربية السعودية، مع الحفاظ على التقاليد
-              الأصيلة واللمسة العصرية الراقية
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Button asChild variant="gold" size="xl" className="hover-glow">
-                <Link to="/contact">
-                  تواصل معنا الآن
-                  <ArrowLeft className="mr-3 h-6 w-6" />
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                variant="minimal"
-                size="xl"
-                className="border-primary-foreground/30 text-primary-foreground dark:border-gray-400 dark:text-gray-300 bg-primary-foreground/10 hover:bg-primary-foreground/10 dark:bg-gray-800"
-              >
-                <Link to="/gallery">اطلع على أعمالنا</Link>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Floating decoration */}
-        <motion.div
-          className="absolute top-20 right-20 w-32 h-32 rounded-full bg-luxury/10 dark:bg-yellow-400/20 blur-3xl"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </section>
+      <Hero/>
 
       {/* Services Section */}
       <section className="section-spacing bg-gradient-calm dark:bg-gray-800">
