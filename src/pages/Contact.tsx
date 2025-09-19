@@ -81,7 +81,7 @@ const Contact = () => {
             <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
               تواصل معنا
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-[#580012] leading-relaxed">
               نحن هنا لمساعدتكم في تنظيم فعاليتكم المثالية. تواصلوا معنا اليوم
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ const Contact = () => {
                       >
                         {item.info}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-[#580012]">
                         {item.description}
                       </p>
                     </CardContent>
@@ -261,15 +261,11 @@ const Contact = () => {
                       <span className="text-[#580012] font-medium">
                         السبت - الخميس
                       </span>
-                      <span className="text-muted-foreground">
-                        9:00 ص - 10:00 م
-                      </span>
+                      <span className="text-[#580012]">9:00 ص - 10:00 م</span>
                     </div>
                     <div className="flex justify-between items-center border-b border-border pb-2 flex-row-reverse">
                       <span className="text-[#580012] font-medium">الجمعة</span>
-                      <span className="text-muted-foreground">
-                        2:00 م - 10:00 م
-                      </span>
+                      <span className="text-[#580012]">2:00 م - 10:00 م</span>
                     </div>
                     <div className="text-center pt-4">
                       <span className="text-accent font-medium">

@@ -21,7 +21,7 @@ body {
 
     /* Base theme colors using exact specifications */
     --background: 0 0% 100%;            /* Pure white background */
-    --foreground: 162 100% 10%;         /* Deep green text */
+    --foreground: #580012         /* Deep text */
 
     --card: 0 0% 100%;                  /* Pure white cards */
     --card-foreground: 162 100% 10%;
@@ -86,7 +86,7 @@ body {
   .dark {
     /* Dark theme using sophisticated dark variations */
     --background: 162 100% 3%;          /* Very dark green background */
-    --foreground: 60 30% 95%;           /* Warm light text */
+    --foreground: foreground;           /* Warm light text */
 
     --card: 162 80% 4%;
     --card-foreground: 60 30% 95%;

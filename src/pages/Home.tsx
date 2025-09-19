@@ -52,7 +52,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 overflow-hidden">
       {/* Hero Section */}
-      <Hero/>
+      <Hero />
 
       {/* Services Section */}
       <section className="section-spacing bg-gradient-calm dark:bg-gray-800">
@@ -66,7 +66,7 @@ const Home = () => {
           >
             <h2 className="font-bold text-[#580012] mb-6">خدماتنا المميزة</h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />
-            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-elegant">
+            <p className="text-xl !text-[#580012]  max-w-3xl mx-auto text-elegant">
               نقدم مجموعة شاملة من الخدمات المتخصصة لضمان نجاح فعالياتكم وتحقيق
               تطلعاتكم بأعلى معايير الجودة والأناقة
             </p>
@@ -87,10 +87,10 @@ const Home = () => {
                     <div className="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="h-10 w-10 text-luxury-foreground dark:text-yellow-400" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground dark:text-white mb-6">
+                    <h3 className="text-2xl font-semibold text-[#580012] dark:text-white mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground dark:text-gray-300 leading-relaxed text-elegant">
+                    <p className="text-[#580012] leading-relaxed">
                       {service.description}
                     </p>
                   </CardContent>
@@ -118,7 +118,7 @@ const Home = () => {
                   <div className="text-4xl lg:text-5xl font-bold text-accent dark:text-yellow-400 mb-4">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground dark:text-gray-300 font-medium">
+                  <div className="text-[#580012] dark:text-gray-300 font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const Home = () => {
               <h2 className="font-bold text-[#580012] dark:text-white mb-8">
                 لماذا تختارونا؟
               </h2>
-              <p className="text-xl text-muted-foreground dark:text-gray-300 mb-10 leading-relaxed text-elegant">
+              <p className="text-xl text-[#580012] dark:text-gray-300 mb-10 leading-relaxed text-elegant">
                 نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات منذ أكثر من
                 عقد من الزمان. فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير
                 الجودة والأناقة، مع الحفاظ على التقاليد السعودية الأصيلة.
@@ -160,7 +160,7 @@ const Home = () => {
                     <div className="w-12 h-12 bg-gradient-gold dark:bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon className="h-6 w-6 text-luxury-foreground dark:text-white" />
                     </div>
-                    <span className="text-foreground dark:text-white font-medium text-lg">
+                    <span className="text-[#580012] dark:text-white font-medium text-lg">
                       {feature.text}
                     </span>
                   </motion.div>
@@ -190,10 +190,10 @@ const Home = () => {
               <div className="bg-gradient-gold dark:bg-yellow-500 rounded-3xl p-2 shadow-luxury">
                 <div className="bg-card dark:bg-gray-900 rounded-2xl p-12 text-center">
                   <Crown className="h-24 w-24 text-accent dark:text-yellow-400 mx-auto mb-8" />
-                  <h3 className="text-4xl font-bold text-foreground dark:text-white mb-4">
+                  <h3 className="text-4xl font-bold text-[#580012] dark:text-white mb-4">
                     التميز والإتقان
                   </h3>
-                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
+                  <p className="text-[#580012] dark:text-gray-300 text-lg leading-relaxed">
                     نسعى لتحقيق أحلامكم وجعل فعالياتكم استثنائية لا تُنسى
                   </p>
                 </div>
@@ -217,7 +217,7 @@ const Home = () => {
               آراء العملاء
             </h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />
-            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-elegant">
+            <p className="text-xl text-[#580012] dark:text-gray-300 max-w-3xl mx-auto text-elegant">
               ما يقوله عملاؤنا عن خدماتنا في تنظيم الفعاليات واهتمامنا بأدق
               التفاصيل.
             </p>
@@ -258,10 +258,10 @@ const Home = () => {
                       alt={testimonial.name}
                       className="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow-md"
                     />
-                    <p className="text-muted-foreground dark:text-gray-300 leading-relaxed mb-4 text-elegant">
+                    <p className="text-[#580012] dark:text-gray-300 leading-relaxed mb-4 text-elegant">
                       "{testimonial.feedback}"
                     </p>
-                    <h4 className="text-lg font-semibold text-foreground dark:text-white">
+                    <h4 className="text-lg font-semibold text-[#580012] dark:text-white">
                       {testimonial.name}
                     </h4>
                   </CardContent>

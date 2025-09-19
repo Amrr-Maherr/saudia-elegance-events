@@ -8,16 +8,16 @@ const Gallery = () => {
   const [selectedMedia, setSelectedMedia] = useState(null); // state للفول سكرين
 
   const [media, setMedia] = useState([]);
-  
-    useEffect(() => {
-        const loadFiles = async () => {
-            const res = await fetch('/api/files');
-            const files = await res.json();
-            setMedia(files.filter(m => m.type !== 'other'));
-        };
 
-        loadFiles();
-    }, []);
+  useEffect(() => {
+    const loadFiles = async () => {
+      const res = await fetch("/api/files");
+      const files = await res.json();
+      setMedia(files.filter((m) => m.type !== "other"));
+    };
+
+    loadFiles();
+  }, []);
 
   const tabs = [
     { key: "all", label: "الكل" },
@@ -26,9 +26,7 @@ const Gallery = () => {
   ];
 
   const filteredItems =
-    filter === "all"
-      ? media
-      : media.filter((item) => item.type === filter);
+    filter === "all" ? media : media.filter((item) => item.type === filter);
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
@@ -41,7 +39,7 @@ const Gallery = () => {
           <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
             معرض أعمالنا
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-[#580012] leading-relaxed">
             اطلعوا على بعض من أعمالنا المصورة والفيديوهات
           </p>
         </motion.div>
@@ -57,7 +55,7 @@ const Gallery = () => {
               className={`cursor-pointer px-6 py-2 text-sm font-medium transition-all duration-200 ${
                 filter === tab.key
                   ? "bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90"
-                  : "bg-secondary text-secondary-foreground hover:bg-elegant"
+                  : "bg-secondary text-[#580012] hover:bg-elegant"
               }`}
               onClick={() => setFilter(tab.key)}
             >
@@ -116,7 +114,7 @@ const Gallery = () => {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-[#580012]">
                 لا توجد عناصر في هذا التصنيف حالياً
               </p>
             </motion.div>

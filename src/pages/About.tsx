@@ -1,31 +1,32 @@
-import { motion } from 'framer-motion';
-import { Award, Users, Clock, Heart, Shield, Star } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { motion } from "framer-motion";
+import { Award, Users, Clock, Heart, Shield, Star } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const values = [
     {
       icon: Heart,
-      title: 'الشغف والاهتمام',
-      description: 'نعمل بشغف وحب لضمان نجاح كل فعالية نقوم بتنظيمها'
+      title: "الشغف والاهتمام",
+      description: "نعمل بشغف وحب لضمان نجاح كل فعالية نقوم بتنظيمها",
     },
     {
       icon: Shield,
-      title: 'الثقة والمصداقية',
-      description: 'نبني علاقات طويلة الأمد مع عملائنا قائمة على الثقة والشفافية'
+      title: "الثقة والمصداقية",
+      description:
+        "نبني علاقات طويلة الأمد مع عملائنا قائمة على الثقة والشفافية",
     },
     {
       icon: Star,
-      title: 'التميز والجودة',
-      description: 'نسعى دائماً لتقديم أعلى مستويات الجودة في جميع خدماتنا'
-    }
+      title: "التميز والجودة",
+      description: "نسعى دائماً لتقديم أعلى مستويات الجودة في جميع خدماتنا",
+    },
   ];
 
   const stats = [
-    { number: '+500', label: 'فعالية ناجحة' },
-    { number: '+10', label: 'سنوات خبرة' },
-    { number: '+100', label: 'عميل راضي' },
-    { number: '24/7', label: 'دعم متواصل' }
+    { number: "+500", label: "فعالية ناجحة" },
+    { number: "+10", label: "سنوات خبرة" },
+    { number: "+100", label: "عميل راضي" },
+    { number: "24/7", label: "دعم متواصل" },
   ];
 
   return (
@@ -40,7 +41,7 @@ const About = () => {
             <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
               من نحن
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-[#580012] leading-relaxed">
               نحن فريق متخصص في تنظيم الفعاليات بخبرة تزيد عن 10 سنوات في
               المملكة العربية السعودية
             </p>
@@ -57,7 +58,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
             >
               <h2 className="text-3xl font-bold text-[#580012] mb-6">قصتنا</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-[#580012] leading-relaxed">
                 <p>
                   بدأت رحلتنا من الحلم بتقديم خدمات تنظيم فعاليات استثنائية تجمع
                   بين الأصالة والحداثة. منذ أكثر من عقد من الزمان، نقوم بتنظيم
@@ -94,7 +95,7 @@ const About = () => {
                         <div className="text-2xl font-bold text-accent mb-2">
                           {stat.number}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-sm text-[#580012]">
                           {stat.label}
                         </div>
                       </motion.div>
@@ -115,10 +116,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#580012]d mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold !text-[#580012] mb-4">
               قيمنا ومبادئنا
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-[#580012] max-w-2xl mx-auto">
               نؤمن بالقيم الأصيلة التي توجه عملنا وتضمن رضا عملائنا
             </p>
           </motion.div>
@@ -137,10 +138,10 @@ const About = () => {
                     <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
                       <value.icon className="h-8 w-8 text-luxury-foreground" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                    <h3 className="text-xl font-semibold text-[#580012] mb-4">
                       {value.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-[#580012] leading-relaxed">
                       {value.description}
                     </p>
                   </CardContent>
@@ -182,7 +183,7 @@ const About = () => {
               <h2 className="text-3xl font-bold text-[#580012] mb-6">
                 فريق العمل
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-[#580012] mb-6 leading-relaxed">
                 يتكون فريقنا من مجموعة من المتخصصين ذوي الخبرة الواسعة في مجال
                 تنظيم الفعاليات. نحن نعمل كفريق واحد لضمان تقديم أفضل الخدمات
                 لعملائنا الكرام.
@@ -190,15 +191,15 @@ const About = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 space-x-reverse">
                   <Users className="h-5 w-5 text-accent" />
-                  <span className="text-foreground">مخططون متخصصون</span>
+                  <span className="text-[#580012]">مخططون متخصصون</span>
                 </div>
                 <div className="flex items-center space-x-3 space-x-reverse">
                   <Clock className="h-5 w-5 text-accent" />
-                  <span className="text-foreground">منسقون لوجستيون</span>
+                  <span className="text-[#580012]">منسقون لوجستيون</span>
                 </div>
                 <div className="flex items-center space-x-3 space-x-reverse">
                   <Award className="h-5 w-5 text-accent" />
-                  <span className="text-foreground">مصممون إبداعيون</span>
+                  <span className="text-[#580012]">مصممون إبداعيون</span>
                 </div>
               </div>
             </motion.div>
