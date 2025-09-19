@@ -35,7 +35,7 @@ const Home = () => {
   ];
 
   const features = [
-    { text: "*خبرة في تقديم الفعاليات في الممكلة", icon: Award },
+    { text: "خبرة في تقديم الفعاليات في الممكلة", icon: Award },
     { text: "فريق محترف ومتخصص", icon: Users },
     { text: "خدمات متكاملة وشاملة", icon: Sparkles },
     { text: "أسعار تنافسية ومناسبة", icon: Star },
@@ -363,7 +363,7 @@ const Home = () => {
 
             <Button asChild variant="gold" size="xl" className="hover-glow">
               <Link to="/contact">
-                تواصل الواتساب احجز استشارة مجانية الآن
+                تواصل معنا عبر واتساب
                 <ArrowLeft className="mr-3 h-6 w-6" />
               </Link>
             </Button>

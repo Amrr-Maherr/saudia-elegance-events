@@ -66,7 +66,7 @@ body {
 
     /* Luxurious gradients using exact colors */
     --gradient-hero: linear-gradient(135deg, hsl(162 100% 10%), #580012);
-      --gradient-gold: linear-gradient(135deg, #580012, #d4af37);
+      --gradient-gold: linear-gradient(135deg, #580012);
       /* خلي الجزء الثاني ذهبي */
       --gradient-elegant: linear-gradient(180deg, #ffffff, #f4e8c1);
       /* درجات فاتحة */
