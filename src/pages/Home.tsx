@@ -244,7 +244,7 @@ const Home = () => {
                 feedback:
                   "خدمات متكاملة وفريق ملتزم. أنصح بهم بشدة لأي مناسبة.",
                 avatar:
-                  "/public/images/WhatsApp3.jpg",
+                  "/images/WhatsApp3.jpg",
               },
             ].map((testimonial, index) => (
               <motion.div
