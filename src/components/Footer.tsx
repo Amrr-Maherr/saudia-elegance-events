@@ -155,7 +155,7 @@ const Footer = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + index * 0.05 }}
                   viewport={{ once: true }}
-                  className="text-primary-foreground/80 hover:text-luxury transition-colors duration-300 cursor-default relative group"
+                  className="text-primary-foreground/80  transition-colors duration-300 cursor-default relative group"
                 >
                   <span className="text-luxury mr-2">•</span>
                   {service}
