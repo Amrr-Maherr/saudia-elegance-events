@@ -141,7 +141,7 @@ const Home = () => {
               <h2 className="font-bold text-[#580012] dark:text-white mb-8">
                 لماذا تختارونا؟
               </h2>
-              <p className="text-xl text-[#580012] dark:text-gray-300 mb-10 leading-relaxed text-elegant">
+              <p className="text-xl !text-[#580012] dark:text-gray-300 mb-10 leading-relaxed text-elegant">
                 نحن نفخر بتقديم خدمات استثنائية في تنظيم الفعاليات منذ أكثر من
                 عقد من الزمان. فريقنا المحترف يضمن تنفيذ فعالياتكم بأعلى معايير
                 الجودة والأناقة، مع الحفاظ على التقاليد السعودية الأصيلة.
@@ -171,7 +171,7 @@ const Home = () => {
                 asChild
                 variant="elegant"
                 size="lg"
-                className="hover-glow"
+                className="hover-glow text-[#580012]"
               >
                 <Link to="/about">
                   اعرف المزيد عنا
@@ -190,10 +190,10 @@ const Home = () => {
               <div className="bg-gradient-gold dark:bg-yellow-500 rounded-3xl p-2 shadow-luxury">
                 <div className="bg-card dark:bg-gray-900 rounded-2xl p-12 text-center">
                   <Crown className="h-24 w-24 text-accent dark:text-yellow-400 mx-auto mb-8" />
-                  <h3 className="text-4xl font-bold text-[#580012] dark:text-white mb-4">
+                  <h3 className="text-4xl font-bold text-white dark:text-white mb-4">
                     التميز والإتقان
                   </h3>
-                  <p className="text-[#580012] dark:text-gray-300 text-lg leading-relaxed">
+                  <p className="text-white dark:text-gray-300 text-lg leading-relaxed">
                     نسعى لتحقيق أحلامكم وجعل فعالياتكم استثنائية لا تُنسى
                   </p>
                 </div>
@@ -213,11 +213,11 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-bold text-[#580012] dark:text-white mb-4">
+            <h2 className="font-bold !text-[#580012] dark:text-white mb-4">
               آراء العملاء
             </h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />
-            <p className="text-xl text-[#580012] dark:text-gray-300 max-w-3xl mx-auto text-elegant">
+            <p className="text-xl !text-[#580012] dark:text-gray-300 max-w-3xl mx-auto text-elegant">
               ما يقوله عملاؤنا عن خدماتنا في تنظيم الفعاليات واهتمامنا بأدق
               التفاصيل.
             </p>
@@ -258,10 +258,10 @@ const Home = () => {
                       alt={testimonial.name}
                       className="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow-md"
                     />
-                    <p className="text-[#580012] dark:text-gray-300 leading-relaxed mb-4 text-elegant">
+                    <p className="!text-[#580012] dark:text-gray-300 leading-relaxed mb-4 text-elegant">
                       "{testimonial.feedback}"
                     </p>
-                    <h4 className="text-lg font-semibold text-[#580012] dark:text-white">
+                    <h4 className="text-lg font-semibold !text-[#580012] dark:text-white">
                       {testimonial.name}
                     </h4>
                   </CardContent>

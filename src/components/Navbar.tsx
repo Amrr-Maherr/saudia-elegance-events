@@ -53,15 +53,15 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                 to={item.href}
                 className={`relative px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
                   isActive(item.href)
-                    ? "text-accent bg-elegant shadow-subtle"
-                    : "text-foreground hover:text-accent hover:bg-calm"
+                    ? "text-white bg-[#580012] shadow-subtle"
+                    : "text-foreground hover:text-white hover:bg-[#580012]"
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-elegant rounded-full shadow-subtle"
+                    className="absolute inset-0 bg-[#5800126e] rounded-full shadow-subtle"
                     style={{ zIndex: -1 }}
                   />
                 )}

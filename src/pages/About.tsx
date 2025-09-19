@@ -95,7 +95,7 @@ const About = () => {
                         <div className="text-2xl font-bold text-accent mb-2">
                           {stat.number}
                         </div>
-                        <div className="text-sm text-[#580012]">
+                        <div className="text-sm !text-white">
                           {stat.label}
                         </div>
                       </motion.div>

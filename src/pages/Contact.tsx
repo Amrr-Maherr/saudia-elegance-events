@@ -166,7 +166,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full bg-input border-border"
+                        className="w-full bg-white border-border"
                         placeholder="اكتب اسمك الكامل"
                       />
                     </div>
@@ -184,7 +184,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full bg-input border-border"
+                        className="w-full bg-white border-border"
                         placeholder="05xxxxxxxx"
                       />
                     </div>
@@ -202,7 +202,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         rows={6}
-                        className="w-full bg-input border-border resize-none"
+                        className="w-full bg-white border-border resize-none"
                         placeholder="اكتب تفاصيل الفعالية التي تريد تنظيمها..."
                       />
                     </div>
@@ -276,7 +276,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-elegant shadow-elegant">
+              <Card className="bg-white shadow-elegant">
                 <CardContent className="p-8">
                   <MapPin className="h-8 w-8 text-accent mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-[#580012] text-center mb-4">
