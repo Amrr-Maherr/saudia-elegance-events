@@ -7,8 +7,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const contactInfo = [
-    { icon: Phone, label: "الهاتف", value: "+966 50 123 4567" },
-    { icon: Mail, label: "البريد الإلكتروني", value: "info@events-sa.com" },
+    { icon: Phone, label: "الهاتف", value: "+966531606234" },
+    { icon: Mail, label: "البريد الإلكتروني", value: "info@foushi-events.com" },
     {
       icon: MapPin,
       label: "الموقع",

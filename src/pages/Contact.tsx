@@ -19,28 +19,28 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'الهاتف',
-      info: '+966 50 123 4567',
-      description: 'متاح 24/7 للرد على استفساراتكم'
+      title: "الهاتف",
+      info: "+966531606234",
+      description: "متاح 24/7 للرد على استفساراتكم",
     },
     {
       icon: MessageCircle,
-      title: 'واتساب',
-      info: '+966 50 123 4567',
-      description: 'للتواصل السريع والمباشر'
+      title: "واتساب",
+      info: "+966531606234",
+      description: "للتواصل السريع والمباشر",
     },
     {
       icon: Mail,
-      title: 'البريد الإلكتروني',
-      info: 'info@events-sa.com',
-      description: 'سنرد عليكم خلال 24 ساعة'
+      title: "البريد الإلكتروني",
+      info: "info@foushi-events.com",
+      description: "سنرد عليكم خلال 24 ساعة",
     },
     {
       icon: MapPin,
-      title: 'الموقع',
-      info: 'الرياض، المملكة العربية السعودية',
-      description: 'نخدم جميع مناطق المملكة'
-    }
+      title: "الموقع",
+      info: "الرياض، المملكة العربية السعودية",
+      description: "نخدم جميع مناطق المملكة",
+    },
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

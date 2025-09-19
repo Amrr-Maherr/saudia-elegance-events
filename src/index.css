@@ -208,7 +208,7 @@ body {
 @layer components {
   /* Luxurious gradient backgrounds using exact color specifications */
   .bg-gradient-hero {
-    background: var(--gradient-hero);
+    background: #580012;
   }
   
   .bg-gradient-gold {
