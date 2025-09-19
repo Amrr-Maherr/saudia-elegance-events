@@ -12,7 +12,7 @@ const Footer = () => {
     {
       icon: MapPin,
       label: "الموقع",
-      value: "الرياض، المملكة العربية السعودية",
+      value: "الدمام، (المنطقه الشرقيه) المملكة العربية السعودية",
     },
   ];
 
@@ -131,7 +131,10 @@ const Footer = () => {
                     <div className="text-sm text-primary-foreground/70 mb-1">
                       {item.label}
                     </div>
-                    <div className="text-primary-foreground/90 text-end" dir="ltr">
+                    <div
+                      className="text-primary-foreground/90 text-end"
+                      dir="ltr"
+                    >
                       {item.value}
                     </div>
                   </div>

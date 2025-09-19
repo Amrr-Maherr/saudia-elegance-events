@@ -38,7 +38,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "الموقع",
-      info: "الرياض، المملكة العربية السعودية",
+      info: "الدمام، المملكة العربية السعودية",
       description: "نخدم جميع مناطق المملكة",
     },
   ];
@@ -284,10 +284,10 @@ const Contact = () => {
                   </h3>
                   <div className="text-center space-y-2">
                     <p className="text-elegant-foreground">
-                      الرياض والمناطق المحيطة
+                      الدمام والمناطق المحيطة
                     </p>
                     <p className="text-elegant-foreground">جدة ومكة المكرمة</p>
-                    <p className="text-elegant-foreground">الدمام والخبر</p>
+                    <p className="text-elegant-foreground">(المنطقه الشرقيه)</p>
                     <p className="text-accent font-medium mt-4">
                       وجميع مناطق المملكة
                     </p>
@@ -319,7 +319,7 @@ const Contact = () => {
               </div>
               <div className="bg-primary-foreground/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-primary-foreground mb-2">
-                  هل تقدمون خدمات خارج الرياض؟
+                  هل تقدمون خدمات خارج الدمام؟
                 </h3>
                 <p className="text-primary-foreground/80">
                   نعم، نقدم خدماتنا في جميع أنحاء المملكة العربية السعودية

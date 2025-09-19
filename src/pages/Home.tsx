@@ -229,19 +229,22 @@ const Home = () => {
                 name: "أحمد السليمان",
                 feedback:
                   "كانت تجربة رائعة! الفريق محترف جدًا واهتموا بكل تفاصيل حفل زفافنا.",
-                avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                avatar:
+                  "/images/WhatsApp Image 2025-09-19 at 21.08.54_791e9d94.jpg",
               },
               {
                 name: "فاطمة الحربي",
                 feedback:
                   "تنظيم مراسم العزاء كان محترم ومهني، وشعرنا بالراحة طوال العملية.",
-                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+                avatar:
+                  "/images/WhatsApp Image 2025-09-19 at 21.10.27_2a653221.jpg",
               },
               {
                 name: "سعود القرشي",
                 feedback:
                   "خدمات متكاملة وفريق ملتزم. أنصح بهم بشدة لأي مناسبة.",
-                avatar: "https://randomuser.me/api/portraits/men/56.jpg",
+                avatar:
+                  "/images/WhatsApp Image 2025-09-19 at 21.10.55_760efb3b.jpg",
               },
             ].map((testimonial, index) => (
               <motion.div
