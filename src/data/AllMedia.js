@@ -1,5 +1,4 @@
 // src/data/media.js
-import video1 from "../data/media/VID-20250919-WA0001.mp4";
 import video2 from "../data/media/VID-20250919-WA0004.mp4";
 import video3 from "../data/media/VID-20250919-WA0005.mp4";
 import video4 from "../data/media/VID-20250919-WA0006.mp4";
@@ -28,7 +27,6 @@ import image7 from "../data/media/IMG-20250919-WA0006.jpg";
 import image8 from "../data/media/IMG-20250919-WA0007.jpg";
 
 const media = [
-  { id: 1, type: "video", url: video1 },
   { id: 2, type: "video", url: video2 },
   { id: 3, type: "video", url: video3 },
   { id: 4, type: "video", url: video4 },
