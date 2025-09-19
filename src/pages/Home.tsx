@@ -35,7 +35,7 @@ const Home = () => {
   ];
 
   const features = [
-    { text: "خبرة أكثر من 10 سنوات في المملكة", icon: Award },
+    { text: "*خبرة في تقديم الفعاليات في الممكلة", icon: Award },
     { text: "فريق محترف ومتخصص", icon: Users },
     { text: "خدمات متكاملة وشاملة", icon: Sparkles },
     { text: "أسعار تنافسية ومناسبة", icon: Star },
