@@ -100,7 +100,7 @@ const Home = () => {
                 asChild
                 variant="minimal"
                 size="xl"
-                className="border-primary-foreground/30 text-primary-foreground dark:border-gray-400 dark:text-gray-300 bg-primary-foreground/10 dark:bg-gray-800"
+                className="border-primary-foreground/30 text-primary-foreground dark:border-gray-400 dark:text-gray-300 bg-primary-foreground/10 hover:bg-primary-foreground/10 dark:bg-gray-800"
               >
                 <Link to="/gallery">اطلع على أعمالنا</Link>
               </Button>
@@ -363,7 +363,7 @@ const Home = () => {
 
             <Button asChild variant="gold" size="xl" className="hover-glow">
               <Link to="/contact">
-                احجز استشارة مجانية الآن
+                تواصل الواتساب احجز استشارة مجانية الآن
                 <ArrowLeft className="mr-3 h-6 w-6" />
               </Link>
             </Button>

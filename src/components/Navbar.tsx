@@ -41,7 +41,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
               <img
                 src="/WhatsApp Image 2025-09-17 at 18.22.05_67e6dbb9.jpg"
                 alt="Event"
-                className="md:!w-13 md:!h-13 w-10 h-10 rounded-full object-cover shadow-lg"
+                className="md:!w-18 md:!h-18 w-14 h-14 rounded-full object-cover shadow-lg"
               />
             </motion.div>
           </Link>

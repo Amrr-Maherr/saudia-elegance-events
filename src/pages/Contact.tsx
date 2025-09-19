@@ -1,18 +1,18 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: ''
+    name: "",
+    phone: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -43,38 +43,35 @@ const Contact = () => {
     },
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     setTimeout(() => {
       toast({
         title: "تم إرسال الرسالة بنجاح!",
         description: "سنتواصل معكم في أقرب وقت ممكن.",
       });
-      
-      setFormData({ name: '', phone: '', message: '' });
+      setFormData({ name: "", phone: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
   };
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("مرحباً، أود الاستفسار عن خدمات تنظيم الفعاليات");
-    window.open(`https://wa.me/966501234567?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "مرحباً، أود الاستفسار عن خدمات تنظيم الفعاليات"
+    );
+    window.open(`https://wa.me/966501234567?text=${message}`, "_blank");
   };
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
-      {/* Hero Section */}
       <section className="py-20 bg-gradient-elegant">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -91,39 +88,58 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <Card className="h-full bg-card shadow-elegant hover:shadow-gold transition-all duration-300 text-center">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                      <item.icon className="h-6 w-6 text-luxury-foreground" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-accent font-medium mb-2">{item.info}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {contactInfo.map((item, index) => {
+              let href = "#";
+              if (item.title === "الهاتف") href = `tel:${item.info}`;
+              if (item.title === "واتساب")
+                href = `https://wa.me/${item.info.replace(/\D/g, "")}`;
+              if (item.title === "البريد الإلكتروني")
+                href = `mailto:${item.info}`;
+              if (item.title === "الموقع")
+                href = `https://www.google.com/maps/search/${encodeURIComponent(
+                  item.info
+                )}`;
+
+              return (
+                <motion.a
+                  key={item.title}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="block"
+                >
+                  <Card className="h-full bg-card shadow-elegant hover:shadow-gold transition-all duration-300 text-center cursor-pointer">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <item.icon className="h-6 w-6 text-luxury-foreground" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p
+                        className="text-accent font-medium mb-2 text-center"
+                        dir="ltr"
+                      >
+                        {item.info}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.a>
+              );
+            })}
           </div>
 
-          {/* Contact Form and Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -154,7 +170,6 @@ const Contact = () => {
                         placeholder="اكتب اسمك الكامل"
                       />
                     </div>
-
                     <div>
                       <label
                         htmlFor="phone"
@@ -173,7 +188,6 @@ const Contact = () => {
                         placeholder="05xxxxxxxx"
                       />
                     </div>
-
                     <div>
                       <label
                         htmlFor="message"
@@ -192,7 +206,6 @@ const Contact = () => {
                         placeholder="اكتب تفاصيل الفعالية التي تريد تنظيمها..."
                       />
                     </div>
-
                     <Button
                       type="submit"
                       disabled={isSubmitting}
@@ -215,13 +228,11 @@ const Contact = () => {
               </Card>
             </motion.div>
 
-            {/* Additional Info */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-8"
             >
-              {/* WhatsApp CTA */}
               <Card
                 onClick={handleWhatsAppClick}
                 className="bg-gradient-gold shadow-gold !cursor-pinter"
@@ -237,7 +248,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Working Hours */}
               <Card className="bg-card shadow-elegant">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-center mb-6">
@@ -247,7 +257,7 @@ const Contact = () => {
                     ساعات العمل
                   </h3>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center border-b border-border pb-2">
+                    <div className="flex justify-between items-center border-b border-border pb-2 flex-row-reverse">
                       <span className="text-foreground font-medium">
                         السبت - الخميس
                       </span>
@@ -255,7 +265,7 @@ const Contact = () => {
                         9:00 ص - 10:00 م
                       </span>
                     </div>
-                    <div className="flex justify-between items-center border-b border-border pb-2">
+                    <div className="flex justify-between items-center border-b border-border pb-2 flex-row-reverse">
                       <span className="text-foreground font-medium">
                         الجمعة
                       </span>
@@ -272,7 +282,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Service Areas */}
               <Card className="bg-elegant shadow-elegant">
                 <CardContent className="p-8">
                   <MapPin className="h-8 w-8 text-accent mx-auto mb-4" />
@@ -296,7 +305,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Preview */}
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
