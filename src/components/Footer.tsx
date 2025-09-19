@@ -131,7 +131,7 @@ const Footer = () => {
                     <div className="text-sm text-primary-foreground/70 mb-1">
                       {item.label}
                     </div>
-                    <div className="text-primary-foreground/90" dir="ltr">
+                    <div className="text-primary-foreground/90 text-end" dir="ltr">
                       {item.value}
                     </div>
                   </div>
