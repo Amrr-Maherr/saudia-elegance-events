@@ -56,7 +56,7 @@ const Footer = () => {
                   className="transition-all duration-300 group-hover:scale-105"
                 >
                   <img
-                    src="/WhatsApp Image 2025-09-17 at 18.22.05_67e6dbb9.jpg"
+                    src="/fav.jpg"
                     alt="Event"
                     className="md:!w-13 md:!h-13 w-12 h-12 rounded-full object-cover shadow-lg"
                   />
