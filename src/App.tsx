@@ -12,7 +12,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import "../src/index.css"
-
+import WhatsAppButton from "../src/components/WhatsAppButton"
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -56,8 +56,8 @@ const App = () => {
               </Routes>
             </main>
             <Footer />
-            {/* <WhatsAppFloat /> */}
           </div>
+          <WhatsAppButton/>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
