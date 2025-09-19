@@ -1,12 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import AllMedia from "@/data/AllMedia";
 
 const Gallery = () => {
   const [filter, setFilter] = useState("all");
   const [selectedMedia, setSelectedMedia] = useState(null); // state للفول سكرين
+
+  const [media, setMedia] = useState([]);
+  
+    useEffect(() => {
+        const loadFiles = async () => {
+            const res = await fetch('/api/files');
+            const files = await res.json();
+            setMedia(files.filter(m => m.type !== 'other'));
+        };
+
+        loadFiles();
+    }, []);
 
   const tabs = [
     { key: "all", label: "الكل" },
@@ -16,8 +27,8 @@ const Gallery = () => {
 
   const filteredItems =
     filter === "all"
-      ? AllMedia
-      : AllMedia.filter((item) => item.type === filter);
+      ? media
+      : media.filter((item) => item.type === filter);
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
