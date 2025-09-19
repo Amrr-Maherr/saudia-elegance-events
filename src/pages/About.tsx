@@ -37,7 +37,7 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
               من نحن
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -56,7 +56,7 @@ const About = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6">قصتنا</h2>
+              <h2 className="text-3xl font-bold text-[#580012] mb-6">قصتنا</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   بدأت رحلتنا من الحلم بتقديم خدمات تنظيم فعاليات استثنائية تجمع
@@ -115,7 +115,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#580012]d mb-4">
               قيمنا ومبادئنا
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -179,7 +179,7 @@ const About = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl font-bold text-[#580012] mb-6">
                 فريق العمل
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">

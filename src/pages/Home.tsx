@@ -61,13 +61,13 @@ const Home = () => {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.h1
-              className="font-bold text-primary-foreground dark:text-white mb-8 text-balance"
+              className="font-bold text-primary-foreground mb-8 text-balance"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               تنظيم المناسبات
-              <span className="block text-luxury dark:text-yellow-400 mt-4">
+              <span className="block text-primary-foreground mt-4">
                 بمهنية وأناقة استثنائية
               </span>
             </motion.h1>
@@ -133,9 +133,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="font-bold text-foreground dark:text-white mb-6">
-              خدماتنا المميزة
-            </h2>
+            <h2 className="font-bold text-[#580012] mb-6">خدماتنا المميزة</h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />
             <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto text-elegant">
               نقدم مجموعة شاملة من الخدمات المتخصصة لضمان نجاح فعالياتكم وتحقيق
@@ -209,7 +207,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-bold text-foreground dark:text-white mb-8">
+              <h2 className="font-bold text-[#580012] dark:text-white mb-8">
                 لماذا تختارونا؟
               </h2>
               <p className="text-xl text-muted-foreground dark:text-gray-300 mb-10 leading-relaxed text-elegant">
@@ -284,7 +282,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-bold text-foreground dark:text-white mb-4">
+            <h2 className="font-bold text-[#580012] dark:text-white mb-4">
               آراء العملاء
             </h2>
             <div className="divider-gold max-w-24 mx-auto mb-6" />

@@ -28,7 +28,7 @@ const Footer = () => {
 
   const socialMedia = [
     { icon: Facebook, link: "https://facebook.com" },
-    { icon: Instagram, link: "https://instagram.com" },
+    { icon: Instagram, link: "https://instagram.com/Fushi.40" },
     { icon: Twitter, link: "https://twitter.com" },
   ];
 
@@ -131,7 +131,7 @@ const Footer = () => {
                     <div className="text-sm text-primary-foreground/70 mb-1">
                       {item.label}
                     </div>
-                    <div className="text-primary-foreground/90">
+                    <div className="text-primary-foreground/90" dir="ltr">
                       {item.value}
                     </div>
                   </div>

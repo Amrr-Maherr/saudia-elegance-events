@@ -27,7 +27,7 @@ const Gallery = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
             معرض أعمالنا
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">

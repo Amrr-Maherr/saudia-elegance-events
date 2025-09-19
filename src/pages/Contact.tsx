@@ -78,7 +78,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
               تواصل معنا
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -120,7 +120,7 @@ const Contact = () => {
                       <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
                         <item.icon className="h-6 w-6 text-luxury-foreground" />
                       </div>
-                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                      <h3 className="text-lg font-semibold text-[#580012] mb-2">
                         {item.title}
                       </h3>
                       <p
@@ -146,7 +146,7 @@ const Contact = () => {
             >
               <Card className="bg-card shadow-elegant">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-foreground text-center">
+                  <CardTitle className="text-2xl font-bold text-[#580012] text-center">
                     أرسل لنا رسالة
                   </CardTitle>
                 </CardHeader>
@@ -155,7 +155,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-foreground mb-2"
+                        className="block text-sm font-medium text-[#580012] mb-2"
                       >
                         الاسم الكامل
                       </label>
@@ -173,7 +173,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-foreground mb-2"
+                        className="block text-sm font-medium text-[#580012] mb-2"
                       >
                         رقم الهاتف
                       </label>
@@ -191,7 +191,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-foreground mb-2"
+                        className="block text-sm font-medium text-[#580012] mb-2"
                       >
                         الرسالة
                       </label>
@@ -253,12 +253,12 @@ const Contact = () => {
                   <div className="flex items-center justify-center mb-6">
                     <Clock className="h-8 w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground text-center mb-6">
+                  <h3 className="text-xl font-bold text-[#580012] text-center mb-6">
                     ساعات العمل
                   </h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center border-b border-border pb-2 flex-row-reverse">
-                      <span className="text-foreground font-medium">
+                      <span className="text-[#580012] font-medium">
                         السبت - الخميس
                       </span>
                       <span className="text-muted-foreground">
@@ -266,9 +266,7 @@ const Contact = () => {
                       </span>
                     </div>
                     <div className="flex justify-between items-center border-b border-border pb-2 flex-row-reverse">
-                      <span className="text-foreground font-medium">
-                        الجمعة
-                      </span>
+                      <span className="text-[#580012] font-medium">الجمعة</span>
                       <span className="text-muted-foreground">
                         2:00 م - 10:00 م
                       </span>
@@ -285,7 +283,7 @@ const Contact = () => {
               <Card className="bg-elegant shadow-elegant">
                 <CardContent className="p-8">
                   <MapPin className="h-8 w-8 text-accent mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-elegant-foreground text-center mb-4">
+                  <h3 className="text-xl font-bold text-[#580012] text-center mb-4">
                     مناطق الخدمة
                   </h3>
                   <div className="text-center space-y-2">
