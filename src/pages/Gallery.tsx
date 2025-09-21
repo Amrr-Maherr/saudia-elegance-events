@@ -2,10 +2,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Play } from "lucide-react";
 
 const Gallery = () => {
-  const [filter, setFilter] = useState("all");
-  const [selectedMedia, setSelectedMedia] = useState(null); // state للفول سكرين
+  const [filter, setFilter] = useState("video");
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
   const [media, setMedia] = useState([]);
 
@@ -20,17 +21,28 @@ const Gallery = () => {
   }, []);
 
   const tabs = [
+    { key: "video", label: "فيديوهات" },
     { key: "all", label: "الكل" },
     { key: "image", label: "صور" },
-    { key: "video", label: "فيديوهات" },
   ];
 
-  const filteredItems =
-    filter === "all" ? media : media.filter((item) => item.type === filter);
+  const getFilteredItems = () => {
+    if (filter === "video" || filter === "all") {
+      const videoItems = media.filter((item) => item.type === "video");
+      const otherItems = media.filter((item) => item.type !== "video");
+      const topVideos = videoItems.slice(0, 3);
+      const remainingVideos = videoItems.slice(3);
+      return [...topVideos, ...remainingVideos, ...otherItems];
+    }
+    return filter === "all"
+      ? media
+      : media.filter((item) => item.type === filter);
+  };
+
+  const filteredItems = getFilteredItems();
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
-      {/* Hero Section */}
       <section className="py-20 bg-gradient-elegant text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,7 +57,6 @@ const Gallery = () => {
         </motion.div>
       </section>
 
-      {/* Tabs */}
       <section className="py-8 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center gap-4">
           {tabs.map((tab) => (
@@ -65,7 +76,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Gallery Grid */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -83,7 +93,7 @@ const Gallery = () => {
                 className="group"
               >
                 <Card
-                  className="overflow-hidden bg-card shadow-elegant hover:shadow-gold transition-all duration-300 cursor-pointer"
+                  className="overflow-hidden bg-card shadow-elegant hover:shadow-gold transition-all duration-300 cursor-pointer relative"
                   onClick={() => setSelectedMedia(item)}
                 >
                   {item.type === "image" ? (
@@ -93,15 +103,20 @@ const Gallery = () => {
                       className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   ) : (
-                    <video
-                      src={item.url}
-                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                      muted
-                      loop
-                      playsInline
-                      onMouseEnter={(e) => e.target.play()}
-                      onMouseLeave={(e) => e.target.pause()}
-                    />
+                    <div className="relative">
+                      <video
+                        src={item.url}
+                        className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => e.target.play()}
+                        onMouseLeave={(e) => e.target.pause()}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                        <Play className="w-16 h-16 text-white opacity-80 hover:opacity-100 transition-opacity" />
+                      </div>
+                    </div>
                   )}
                 </Card>
               </motion.div>
@@ -122,7 +137,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Fullscreen Modal */}
       <AnimatePresence>
         {selectedMedia && (
           <motion.div
