@@ -17,7 +17,7 @@ const Gallery = () => {
     const loadFiles = async () => {
       try {
         setLoading(true);
-        const res = await fetch("/api/files");
+        const res = await fetch("https://foushi-events.com/api/files");
         const files = await res.json();
 
         setMedia(files.filter((m) => m.type !== "other"));
