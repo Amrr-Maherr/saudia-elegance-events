@@ -7,7 +7,6 @@ import { Play } from "lucide-react";
 const Gallery = () => {
   const [filter, setFilter] = useState("video");
   const [selectedMedia, setSelectedMedia] = useState(null);
-
   const [media, setMedia] = useState([]);
 
   useEffect(() => {
@@ -21,22 +20,33 @@ const Gallery = () => {
   }, []);
 
   const tabs = [
-    { key: "video", label: "فيديوهات" },
     { key: "all", label: "الكل" },
+    { key: "video", label: "فيديوهات" },
     { key: "image", label: "صور" },
   ];
 
   const getFilteredItems = () => {
-    if (filter === "video" || filter === "all") {
-      const videoItems = media.filter((item) => item.type === "video");
+    const videoItems = media
+      .filter((item) => item.type === "video" && item.duration)
+      .sort((a, b) => b.duration - a.duration);
+
+    const topVideos = videoItems.slice(0, 3);
+    const remainingVideos = videoItems.slice(3);
+
+    if (filter === "all") {
       const otherItems = media.filter((item) => item.type !== "video");
-      const topVideos = videoItems.slice(0, 3);
-      const remainingVideos = videoItems.slice(3);
       return [...topVideos, ...remainingVideos, ...otherItems];
     }
-    return filter === "all"
-      ? media
-      : media.filter((item) => item.type === filter);
+
+    if (filter === "video") {
+      return [...topVideos, ...remainingVideos];
+    }
+
+    if (filter === "image") {
+      return media.filter((item) => item.type === "image");
+    }
+
+    return media;
   };
 
   const filteredItems = getFilteredItems();
