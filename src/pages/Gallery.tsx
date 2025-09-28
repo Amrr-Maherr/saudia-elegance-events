@@ -142,8 +142,10 @@ const Gallery = () => {
                             onMouseEnter={(e) => e.target.play()}
                             onMouseLeave={(e) => e.target.pause()}
                           />
-                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                            <Play className="w-16 h-16 text-white opacity-80 hover:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-20 h-20 rounded-full bg-black/60 flex items-center justify-center transform transition-transform duration-300 hover:scale-110 shadow-lg">
+                              <Play className="w-10 h-10 text-white opacity-90" />
+                            </div>
                           </div>
                         </div>
                       )}
