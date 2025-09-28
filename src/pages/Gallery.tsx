@@ -3,36 +3,33 @@ import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
-
-// ✅ كومبونانت اللودر
-const Loader = () => {
-  return (
-    <div className="flex items-center justify-center w-full py-20">
-      <motion.div
-        className="w-12 h-12 border-4 border-[#580012] border-t-transparent rounded-full"
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-      />
-    </div>
-  );
-};
+import Loader from "@/components/Loader";
 
 const Gallery = () => {
   const [filter, setFilter] = useState("video");
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [media, setMedia] = useState([]);
-  const [loading, setLoading] = useState(true); // ✅ حالة اللودر
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadFiles = async () => {
       try {
+        setLoading(true);
         const res = await fetch("/api/files");
         const files = await res.json();
-        setMedia(files.filter((m) => m.type !== "other"));
+
+        const videoItems = files.filter((m) => m.type === "video");
+        const sortedVideos = videoItems.sort((a, b) => b.duration - a.duration);
+
+        const topVideos = sortedVideos.slice(0, 3);
+        const remainingVideos = sortedVideos.slice(3);
+        const imageItems = files.filter((m) => m.type === "image");
+
+        setMedia([...topVideos, ...remainingVideos, ...imageItems]);
       } catch (error) {
-        console.error(error);
+        console.error("Error loading files:", error);
       } finally {
-        setLoading(false); // ✅ وقف اللودر بعد التحميل
+        setLoading(false);
       }
     };
 
@@ -46,26 +43,12 @@ const Gallery = () => {
   ];
 
   const getFilteredItems = () => {
-    const videoItems = media
-      .filter((item) => item.type === "video" && item.duration)
-      .sort((a, b) => b.duration - a.duration);
-
-    const topVideos = videoItems.slice(0, 3);
-    const remainingVideos = videoItems.slice(3);
-
-    if (filter === "all") {
-      const otherItems = media.filter((item) => item.type !== "video");
-      return [...topVideos, ...remainingVideos, ...otherItems];
-    }
-
     if (filter === "video") {
-      return [...topVideos, ...remainingVideos];
+      return media.filter((item) => item.type === "video");
     }
-
     if (filter === "image") {
       return media.filter((item) => item.type === "image");
     }
-
     return media;
   };
 
@@ -73,45 +56,45 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <section className="py-20 bg-gradient-elegant text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+      <section className="py-20 bg-gradient-elegant text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
+            معرض أعمالنا
+          </h1>
+          <p className="text-xl text-[#580012] leading-relaxed">
+            اطلعوا على بعض من أعمالنا المصورة والفيديوهات
+          </p>
+        </motion.div>
+      </section>
+
+      <section className="py-8 bg-background border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center gap-4">
+          {tabs.map((tab) => (
+            <Badge
+              key={tab.key}
+              variant={filter === tab.key ? "default" : "secondary"}
+              className={`cursor-pointer px-6 py-2 text-sm font-medium transition-all duration-200 ${
+                filter === tab.key
+                  ? "bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90"
+                  : "bg-secondary text-[#580012] hover:bg-elegant"
+              }`}
+              onClick={() => setFilter(tab.key)}
             >
-              <h1 className="text-4xl sm:text-5xl font-bold text-[#580012] mb-6">
-                معرض أعمالنا
-              </h1>
-              <p className="text-xl text-[#580012] leading-relaxed">
-                اطلعوا على بعض من أعمالنا المصورة والفيديوهات
-              </p>
-            </motion.div>
-          </section>
+              {tab.label}
+            </Badge>
+          ))}
+        </div>
+      </section>
 
-          <section className="py-8 bg-background border-b border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center gap-4">
-              {tabs.map((tab) => (
-                <Badge
-                  key={tab.key}
-                  variant={filter === tab.key ? "default" : "secondary"}
-                  className={`cursor-pointer px-6 py-2 text-sm font-medium transition-all duration-200 ${
-                    filter === tab.key
-                      ? "bg-gradient-gold text-luxury-foreground hover:bg-gradient-gold/90"
-                      : "bg-secondary text-[#580012] hover:bg-elegant"
-                  }`}
-                  onClick={() => setFilter(tab.key)}
-                >
-                  {tab.label}
-                </Badge>
-              ))}
-            </div>
-          </section>
-
-          <section className="py-20 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {loading ? (
+            <Loader/>
+          ) : (
+            <>
               <motion.div
                 layout
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -168,40 +151,40 @@ const Gallery = () => {
                   </p>
                 </motion.div>
               )}
-            </div>
-          </section>
+            </>
+          )}
+        </div>
+      </section>
 
-          <AnimatePresence>
-            {selectedMedia && (
-              <motion.div
-                className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setSelectedMedia(null)}
-              >
-                {selectedMedia.type === "image" ? (
-                  <motion.img
-                    src={selectedMedia.url}
-                    alt={`media-${selectedMedia.id}`}
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0.8 }}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                ) : (
-                  <motion.video
-                    src={selectedMedia.url}
-                    controls
-                    autoPlay
-                    className="max-h-full max-w-full object-contain"
-                  />
-                )}
-              </motion.div>
+      <AnimatePresence>
+        {selectedMedia && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedMedia(null)}
+          >
+            {selectedMedia.type === "image" ? (
+              <motion.img
+                src={selectedMedia.url}
+                alt={`media-${selectedMedia.id}`}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                className="max-h-full max-w-full object-contain"
+              />
+            ) : (
+              <motion.video
+                src={selectedMedia.url}
+                controls
+                autoPlay
+                className="max-h-full max-w-full object-contain"
+              />
             )}
-          </AnimatePresence>
-        </>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
