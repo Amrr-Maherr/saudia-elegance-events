@@ -6,7 +6,7 @@ import { Play } from "lucide-react";
 import Loader from "@/components/Loader";
 
 const Gallery = () => {
-  const [filter, setFilter] = useState("video");
+  const [filter, setFilter] = useState("all");
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
