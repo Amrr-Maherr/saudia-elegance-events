@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -8,7 +6,7 @@ import { Play } from "lucide-react";
 import Loader from "@/components/Loader";
 
 const Gallery = () => {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("video");
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +17,6 @@ const Gallery = () => {
         setLoading(true);
         const res = await fetch("https://foushi-events.com/api/files");
         const files = await res.json();
-
         setMedia(files.filter((m) => m.type !== "other"));
       } catch (error) {
         console.error("Error loading files:", error);
@@ -38,30 +35,13 @@ const Gallery = () => {
   ];
 
   const getFilteredItems = () => {
-    const videoItems = media.filter((item) => item.type === "video");
-    const imageItems = media.filter((item) => item.type === "image");
-
-    const sortedVideos = [...videoItems].sort(
-      (a, b) => b.duration - a.duration
-    );
-    const topVideos = sortedVideos.slice(0, 3);
-
-    const topVideoIds = new Set(topVideos.map((v) => v.id));
-    const remainingVideos = videoItems.filter((v) => !topVideoIds.has(v.id));
-
-    if (filter === "all") {
-      return [...topVideos, ...remainingVideos, ...imageItems];
-    }
-
     if (filter === "video") {
-      return [...topVideos, ...remainingVideos];
+      return media.filter((item) => item.type === "video");
     }
-
     if (filter === "image") {
-      return imageItems;
+      return media.filter((item) => item.type === "image");
     }
-
-    return [];
+    return media;
   };
 
   const filteredItems = getFilteredItems();
